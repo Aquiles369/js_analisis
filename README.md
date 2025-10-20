@@ -23,11 +23,6 @@ Objetivo: convertir cada archivo .js en una fuente de inteligencia útil durante
  <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/metodos_http_y_header_demo_1.gif"/>
 </p>
 
-<br>
-<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
-<br>
-
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdrZDd3eHBkaTloYXJ6dWYyNTV6bWhwZ3AwOG1xOWJ4cWtzbGhldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mGOfFjRCnoGPcLqYoA/giphy.gif" width = 80px>  </picture> “Checklist analisis de archivos .js ”
 
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
