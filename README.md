@@ -63,15 +63,14 @@ Los contenidos en tooltips se escapan (no se ejecuta nada), porque queremos info
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdrZDd3eHBkaTloYXJ6dWYyNTV6bWhwZ3AwOG1xOWJ4cWtzbGhldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mGOfFjRCnoGPcLqYoA/giphy.gif" width = 80px>  </picture> “Checklist analisis de archivos .js ”
+### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdrZDd3eHBkaTloYXJ6dWYyNTV6bWhwZ3AwOG1xOWJ4cWtzbGhldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mGOfFjRCnoGPcLqYoA/giphy.gif" width = 80px>  </picture> “CHECKLIST — ANÁLISIS OFENSIVO DE ARCHIVOS .JS ”
 
 
 
 ```yaml
-CHECKLIST — ANÁLISIS OFENSIVO DE ARCHIVOS .JS
-🧱 1. Enumeración completa de archivos JS
+1. Enumeración completa de archivos JS
 
-✅ Prueba clave:
+•  Prueba clave:
 
 Localizá todos los .js cargados por la app:
 
@@ -83,19 +82,24 @@ katana -u https://target.com -jc
 
 subjs, linkfinder, JSFinder
 
+
+
 Interpretación:
 
 🟢 Solo librerías externas → ✅ superficie mínima.
 
-🟡 Archivos internos pero minificados → ⚠️ potencial oculto.
+🟡 Archivos internos pero minificados →  potencial oculto.
 
-🔴 JS internos no minificados → 🔥 info sensible accesible.
+🔴 JS internos no minificados →  info sensible accesible.
 
-💡 Pro tip: buscá también .map (source maps), a veces revelan el código fuente completo sin minificar.
+ Pro tip: buscá también .map (source maps), a veces revelan el código fuente completo sin minificar.
 
-🧪 2. Búsqueda de endpoints y rutas internas
 
-✅ Prueba clave:
+
+
+2. Búsqueda de endpoints y rutas internas
+
+•  Prueba clave:
 
 Extraé URLs, paths y dominios embebidos:
 
@@ -108,17 +112,20 @@ Usá grep -Eo "https?://[^\"']+" *.js o linkfinder.py.
 
 Interpretación:
 
-🟢 Solo endpoints públicos conocidos → ✅ controlado.
+🟢 Solo endpoints públicos conocidos →  controlado.
 
-🟡 Endpoints no documentados → ⚠️ recon útil.
+🟡 Endpoints no documentados →  recon útil.
 
-🔴 Rutas internas o admin → 🔥 expansión de superficie.
+🔴 Rutas internas o admin →  expansión de superficie.
 
-💡 Encontrar /admin/backup o /api/internal/config en un .js = joya para cadenas de explotación.
+Encontrar /admin/backup o /api/internal/config en un .js = joya para cadenas de explotación.
 
-🧰 3. Búsqueda de secretos, claves y tokens
 
-✅ Prueba clave:
+
+
+3. Búsqueda de secretos, claves y tokens
+
+•  Prueba clave:
 
 Buscá patrones comunes:
 
@@ -137,17 +144,20 @@ AIza[0-9A-Za-z\-_]{35}
 
 Interpretación:
 
-🟢 Nada sensible → ✅ limpio.
+🟢 Nada sensible →  limpio.
 
-🟡 Tokens revocados → ⚠️ leak informativo.
+🟡 Tokens revocados →  leak informativo.
 
-🔴 Claves válidas → 🔥 explotación directa (SSRF, RCE, admin takeover).
+🔴 Claves válidas →  explotación directa (SSRF, RCE, admin takeover).
 
-💡 En bug bounties reales, se han conseguido RCE en AWS Lambda con una simple key filtrada en un .js.
+En bug bounties reales, se han conseguido RCE en AWS Lambda con una simple key filtrada en un .js.
 
-🪤 4. Detección de parámetros, query keys y payload sinks
 
-✅ Prueba clave:
+
+
+4. Detección de parámetros, query keys y payload sinks
+
+•  Prueba clave:
 
 Identificá parámetros usados en requests JS:
 
@@ -157,17 +167,21 @@ xhr.open("GET", "/details?item="+item)
 
 Interpretación:
 
-🟢 Parámetros internos sin control del usuario → ✅ seguro.
+🟢 Parámetros internos sin control del usuario →  seguro.
 
-🟡 Parámetros parcialmente controlables → ⚠️ probar inyección.
+🟡 Parámetros parcialmente controlables →  probar inyección.
 
-🔴 Parámetros 100% controlados por el usuario → 🔥 vector XSS, IDOR o inyección.
+🔴 Parámetros 100% controlados por el usuario →  vector XSS, IDOR o inyección.
 
-💡 Cada parámetro en un .js = posible punto de entrada. Combínalo con fuzzers o payloads manuales.
+Cada parámetro en un .js = posible punto de entrada. Combínalo con fuzzers o payloads manuales.
 
-🧠 5. Identificación de sinks peligrosos y funciones críticas
 
-✅ Prueba clave:
+
+
+
+5. Identificación de sinks peligrosos y funciones críticas
+
+•  Prueba clave:
 
 Buscá funciones que ejecutan o insertan contenido:
 
@@ -181,17 +195,21 @@ setTimeout("...
 
 Interpretación:
 
-🟢 No se usan sinks peligrosos → ✅ superficie limitada.
+🟢 No se usan sinks peligrosos →  superficie limitada.
 
-🟡 Sinks presentes pero con sanitización → ⚠️ necesita bypass.
+🟡 Sinks presentes pero con sanitización →  necesita bypass.
 
-🔴 Sinks con input del usuario → 🔥 DOM XSS o RCE inminente.
+🔴 Sinks con input del usuario →  DOM XSS o RCE inminente.
 
-💡 Esto convierte un simple parámetro reflejado en XSS funcional sin tocar el backend.
+Esto convierte un simple parámetro reflejado en XSS funcional sin tocar el backend.
 
-🛠️ 6. Análisis de lógica interna y bypasses potenciales
 
-✅ Prueba clave:
+
+
+
+6. Análisis de lógica interna y bypasses potenciales
+
+•  Prueba clave:
 
 Leé la lógica de funciones sensibles:
 
@@ -203,17 +221,21 @@ Checks ocultos (if(!isVerified))
 
 Interpretación:
 
-🟢 Lógica clara y robusta → ✅ bien estructurado.
+🟢 Lógica clara y robusta →  bien estructurado.
 
-🟡 Validaciones solo en frontend → ⚠️ bypass fácil.
+🟡 Validaciones solo en frontend →  bypass fácil.
 
-🔴 Acciones críticas sin verificación → 🔥 abuso directo.
+🔴 Acciones críticas sin verificación →  abuso directo.
 
-💡 Muchas apps validan roles solo en el JS → podés cambiar user por admin desde la consola y acceder a paneles protegidos 😏
+Muchas apps validan roles solo en el JS → podés cambiar user por admin desde la consola y acceder a paneles protegidos
 
-🧪 7. Revisión de dependencias vulnerables
 
-✅ Prueba clave:
+
+
+
+7. Revisión de dependencias vulnerables
+
+•  Prueba clave:
 
 Buscá versiones de librerías:
 
@@ -225,17 +247,21 @@ Chequeá CVEs con npm audit o Snyk
 
 Interpretación:
 
-🟢 Todas actualizadas → ✅ bajo riesgo.
+🟢 Todas actualizadas →  bajo riesgo.
 
-🟡 Algunas obsoletas → ⚠️ potencial encadenamiento.
+🟡 Algunas obsoletas →  potencial encadenamiento.
 
-🔴 Librerías con CVEs conocidas → 🔥 vector de entrada directo.
+🔴 Librerías con CVEs conocidas →  vector de entrada directo.
 
-💡 jQuery < 3.5.0 = XSS autoejecutable en muchos casos.
+jQuery < 3.5.0 = XSS autoejecutable en muchos casos.
 
-🛡️ 8. Verificación de mapas fuente (.map)
 
-✅ Prueba clave:
+
+
+
+8. Verificación de mapas fuente (.map)
+
+•  Prueba clave:
 
 Intentá acceder a *.js.map:
 
@@ -244,21 +270,23 @@ https://target.com/js/main.js.map
 
 Interpretación:
 
-🟢 No existe o inaccesible → ✅ bien configurado.
+🟢 No existe o inaccesible →  bien configurado.
 
-🟡 Existe pero minificado → ⚠️ recon útil.
+🟡 Existe pero minificado →  recon útil.
 
-🔴 Código fuente completo expuesto → 🔥 mapa completo de la app.
+🔴 Código fuente completo expuesto →  mapa completo de la app.
 
-- Un .map filtrado es equivalente a leer el repositorio original 😳
+- Un .map filtrado es equivalente a leer el repositorio original 
 
-📊 Resultado final — Cómo interpretarlo
-Estado final	Significado
-🟢 Todos verdes	✅ Análisis de JS sin hallazgos.
-🟡 Alguno amarillo	⚠️ superficie abierta, vale la pena profundizar.
-🔴 Cualquiera rojo	🔥 JS vulnerable o con info crítica filtrada.
+• Resultado final, cómo interpretarlo
 
-- Pro tip Myrmidón:
+
+• Estado final	Significado
+🟢 Todos verdes	 Análisis de JS sin hallazgos.
+🟡 Alguno amarillo  superficie abierta, vale la pena profundizar.
+🔴 Cualquiera rojo	 JS vulnerable o con info crítica filtrada.
+
+•  Pro tip Myrmidón:
 El análisis de JS suele ser el paso más infravalorado… pero el más rentable. Así nacen muchas cadenas:
 
 JS con endpoints → SSRF / IDOR
@@ -283,9 +311,23 @@ fetch("/api/admin/delete?user=" + userId);
 BONUS: Muchos programas bug bounty pagan más por bugs descubiertos en .js que por vulnerabilidades clásicas, porque implican acceso profundo al sistema sin interacción directa.
 ```
 
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
 
- <br>
+### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdrZDd3eHBkaTloYXJ6dWYyNTV6bWhwZ3AwOG1xOWJ4cWtzbGhldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mGOfFjRCnoGPcLqYoA/giphy.gif" width = 80px>  </picture> “Investigación propia”
 
+
+•
+•
+•
+•
+•
+•
+
+
+
+<br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
