@@ -445,6 +445,7 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 ```yam
 
 ```
+Utilizar mi tool de gestor de informe para poder subir masivamente los informes y crear automaticamente las con las notas, link (aqui)
 <br>
 
 ## json importar tools con mis notas
