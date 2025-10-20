@@ -48,8 +48,10 @@ Objetivo: convertir cada archivo .js en una fuente de inteligencia útil durante
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWoxdW43NjQ5NjhocHF6NnA2MmQ4OHloZWEyc2R1M2t6Z3FkMWhsZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iuJEr72fj83GJy4tJn/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 
-Los archivos JavaScript públicos suelen filtrar información sensible, como endpoints ocultos, claves API, tokens, rutas internas o lógica de seguridad, que los desarrolladores dejan embebidos sin darse cuenta. Analizarlos permite descubrir superficies de ataque invisibles en la interfaz, explotar vulnerabilidades como XSS, IDOR, SSRF o bypass de autenticación, y acceder a recursos restringidos.
-En bug bounty, leer el .js es como mirar detrás del telón: ahí están los secretos que el frontend no debía mostrar.<br>
+Los archivos JavaScript públicos suelen filtrar información sensible —endpoints ocultos, claves API, tokens, rutas internas o lógica de seguridad— que los desarrolladores dejan embebidos sin darse cuenta.  
+Analizarlos permite descubrir superficies de ataque invisibles, explotar vulnerabilidades como **XSS, IDOR, SSRF o bypass de autenticación**, y acceder a recursos restringidos.<br>
+
+En bug bounty, leer el `.js` es como mirar detrás del telón: ahí están los secretos que el frontend no debía mostrar.
 
 
 <br>
