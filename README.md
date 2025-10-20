@@ -48,10 +48,8 @@ Objetivo: convertir cada archivo .js en una fuente de inteligencia útil durante
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWoxdW43NjQ5NjhocHF6NnA2MmQ4OHloZWEyc2R1M2t6Z3FkMWhsZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iuJEr72fj83GJy4tJn/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 
-Tool offline en el navegador para gestionar informes/URLs de bug bounty.
-Abrís el HTML y ya podés crear/editar/eliminar categorías, agregar renglones con informes, asignar etiquetas, filtrar, anotar, abrir individual o abrir todos los filtrados.<br><br>
-Persistencia en localStorage; también exportar/importar JSON o reset total.
-Los contenidos en tooltips se escapan (no se ejecuta nada), porque queremos informes, no un XSS auto-inflicto.<br>
+Los archivos JavaScript públicos suelen filtrar información sensible, como endpoints ocultos, claves API, tokens, rutas internas o lógica de seguridad, que los desarrolladores dejan embebidos sin darse cuenta. Analizarlos permite descubrir superficies de ataque invisibles en la interfaz, explotar vulnerabilidades como XSS, IDOR, SSRF o bypass de autenticación, y acceder a recursos restringidos.
+En bug bounty, leer el .js es como mirar detrás del telón: ahí están los secretos que el frontend no debía mostrar.<br>
 
 
 • Formato: interfaz web local (HTML/JS). Data en localStorage (offline, en tu máquina).<br>
@@ -310,12 +308,12 @@ fetch("/api/admin/delete?user=" + userId);
 ### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9qZDE2NG00dmdxMzBvbzJmOHJycnplYWZwZmNrZTdpcTVyNXM5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eyjs7st5OcMXSw7mjV/giphy.gif" width = 80px>  </picture> “Investigación propia”
 
 
-•
-•
-•
-•
-•
-•
+• <br><br>
+• <br><br>
+• <br><br>
+• <br><br>
+• <br><br>
+• <br><br>
 
 
 
@@ -441,7 +439,7 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Informes 40 de diferentes plataformas”
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “40 Informes diferentes”
 
 ## Lista de informes link directo
 ```yam
@@ -469,7 +467,7 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “img mapas mentales”
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> “Recursos de img”
 
 
 
