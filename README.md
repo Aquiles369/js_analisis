@@ -59,11 +59,11 @@ En bug bounty, leer el .js es como mirar detrás del telón: ahí están los sec
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWoxdW43NjQ5NjhocHF6NnA2MmQ4OHloZWEyc2R1M2t6Z3FkMWhsZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iuJEr72fj83GJy4tJn/giphy.gif" width = 80px>  </picture> Índice 
 <br><br>
 
-- [🔎 Introducción](#checklist--análisis-de-archivos-js)
-- [⚔️ Técnicas de Análisis](#️-técnicas-de-análisis)
-- [📜 Informes Relacionados](#-informes-relacionados)
-- [🧪 Herramientas Recomendadas](#-herramientas-recomendadas)
-- [📚 Recursos y Dorks](#-recursos-y-dorks)
+- [ Checklist , análisis de archivos .js](#1)
+- [Investigación propia](#2)
+- [Palabras claves y Dorks](#3)
+- [40 Informes diferentes](#4)
+- [Recursos img entre otros](#5)
 
 
 
@@ -74,7 +74,7 @@ En bug bounty, leer el .js es como mirar detrás del telón: ahí están los sec
 ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc255bzh6OWZqdGI1eW54eGFiYjg1ZGt6cjJ5YzA5MDMwZzV2YjM0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3uKw2QfFkJ6zyvD5cU/giphy.gif" width = 80px>  </picture>  Checklist , análisis de archivos .js
 <br><br>
 
-#  Checklist , análisis de archivos .js
+#  1
 
 
 
@@ -320,8 +320,9 @@ fetch("/api/admin/delete?user=" + userId);
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9qZDE2NG00dmdxMzBvbzJmOHJycnplYWZwZmNrZTdpcTVyNXM5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eyjs7st5OcMXSw7mjV/giphy.gif" width = 80px>  </picture> “Investigación propia”
+### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9qZDE2NG00dmdxMzBvbzJmOHJycnplYWZwZmNrZTdpcTVyNXM5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eyjs7st5OcMXSw7mjV/giphy.gif" width = 80px>  </picture> “Investigación propia y Dorks”
 
+#  2
 
 • <br><br>
 • <br><br>
@@ -337,9 +338,9 @@ fetch("/api/admin/delete?user=" + userId);
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Palabras claves”
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Palabras claves y Dorks”
 
-
+#  3
 
 ```yaml
 Keywords (EN)
@@ -456,6 +457,8 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 
 ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> 40 Informes diferentes
 
+#  4
+
 ## Lista de informes link directo
 ```yam
 
@@ -483,10 +486,10 @@ Utilizar mi tool de gestor de informe para poder subir masivamente los informes 
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> “Recursos de img”
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> “Recursos img entre otros”
 
 
-
+#  5
 
 
 <br>
