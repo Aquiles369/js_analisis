@@ -62,7 +62,7 @@ En bug bounty, leer el `.js` es como mirar detrás del telón: ahí están los s
 <br><br>
 
 - [ Checklist , análisis de archivos .js](#1)
-- [Investigación propia](#2)
+- [Investigación propia](#investigación-propia)
 - [Palabras claves y Dorks](#3)
 - [40 Informes diferentes](#4)
 - [Recursos img entre otros](#5)
@@ -322,7 +322,9 @@ fetch("/api/admin/delete?user=" + userId);
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9qZDE2NG00dmdxMzBvbzJmOHJycnplYWZwZmNrZTdpcTVyNXM5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eyjs7st5OcMXSw7mjV/giphy.gif" width = 80px>  </picture> “Investigación propia y Dorks”
+### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9qZDE2NG00dmdxMzBvbzJmOHJycnplYWZwZmNrZTdpcTVyNXM5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eyjs7st5OcMXSw7mjV/giphy.gif" width = 80px>  </picture> 
+
+# Investigación propia
 
 #  2
 
