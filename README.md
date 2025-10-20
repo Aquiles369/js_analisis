@@ -29,25 +29,23 @@ Objetivo: convertir cada archivo .js en una fuente de inteligencia útil durante
 <br>
 
 
-### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3V4NGRlcHkzNGdqbWd2bjBzdHVlNDRoMmNwdmVxOW14OGlibjBzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/EF0aNcNeR9R7CW3sFq/giphy.gif" width = 75px>  </picture> Problema que resuelve<br><br>
-**En bug bounty y auditorías web, los informes terminan desperdigados entre tickets, wikis, tabs del navegador y notas sueltas. Clasificar, priorizar (“leo ya o después”), anotar contexto y abrir en lote sin depender de un backend suele ser un dolor.<br><br>
-• Este gestor te quita ese caos con un entorno totalmente offline, simple y visual: creás categorías, cargás informes/URLs, los priorizás con etiquetas claras, sumás notas (con última edición), abrís un informe o un lote filtrado en un par de clics y te llevás todo como JSON cuando quieras.</a>.** 
+### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGY0OTR3bm96dnoyYXVmcG13dnduYXk3ZDI2NjhnNzN0bXM4NDM1YSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/fy6biuVnGGiZq9Tqwt/giphy.gif" width = 75px>  </picture> Problema que resuelve<br><br>
+**Detecta fugas de información y superficies ocultas de ataque antes de que lo haga un atacante. Permite descubrir rutas internas, parámetros sensibles y lógica vulnerable que no está visible en la interfaz.** 
 
 <br>
 
-### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbGYwNzBkM2ZsOWl2bThodzg5bW5haTJpNGYwaTdvZ21zd3pvZ2x0NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/YARSS5UwRLZtcQHXzp/giphy.gif" width = 75px>  </picture> Qué aporta y cómo beneficia <br><br>
-**• Orden quirúrgico de tus informes: categorías personalizadas (XSS, IDOR, RCE, etc.), renglones con título editable y URL, y etiquetas que te dicen qué leer primero.<br><br>
-• Búsqueda y filtro instantáneos: panel lateral que busca por título, URL, nota o categoría. Filtro por estado para enfocarte en lo urgente o lo de “montón”.<br><br>
-• Documentación táctica sin fricción: cada informe admite nota con contexto, fecha de última edición y tooltip flotante (previsualización segura).<br><br>
-• Velocidad de ejecución: botón Abrir por renglón y opción Abrir TODOS (filtrados) con límite seguro (hasta 15 por clic para no pelear con bloqueadores). Exportás/importás JSON o reseteás en un clic.<br><br>
-• Privacidad y resiliencia: funciona offline en tu navegador usando localStorage. Sin backend, sin instalación, ideal para labs aislados o entornos sensibles.<br><br>
-• Más foco, menos tabitis: todo vive en un lugar. Menos tiempo buscando, más tiempo explotando (legalmente, obvio).</a>.** 
+### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHVnZDh5OWl5Y3dzeTUzYWhqMTZ5NzRwbTZqMHIyNTJldnZiazR2MiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/K7Il3mkCCwggaGzExC/giphy.gif" width = 75px>  </picture> Qué aporta y cómo beneficia <br><br>
+**• Permite descubrir endpoints no documentados o restringidos.<br><br>
+  • Facilita encontrar parámetros vulnerables a XSS, IDOR, SSRF o RCE.<br><br>
+  • Ayuda a identificar claves duras en el código (AWS, Firebase, API keys).<br><br>
+  • Revela lógica de validación en el cliente que puede ser manipulada o saltada.<br><br>
+  • Amplía el mapa de ataque incluso sin autenticación.** 
 
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbXF2ZmtjNHA1YnJ5bjR2dG8yMjhjbWw1aXJwazE0eW9qa2U4anVoNiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Ha2DszQVpjI1AxvW5h/giphy.gif" width = 80px>  </picture> Resumen rápido
+### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWoxdW43NjQ5NjhocHF6NnA2MmQ4OHloZWEyc2R1M2t6Z3FkMWhsZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iuJEr72fj83GJy4tJn/giphy.gif" width = 80px>  </picture> Resumen rápido
 <br><br>
 
 Tool offline en el navegador para gestionar informes/URLs de bug bounty.
@@ -63,7 +61,7 @@ Los contenidos en tooltips se escapan (no se ejecuta nada), porque queremos info
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdrZDd3eHBkaTloYXJ6dWYyNTV6bWhwZ3AwOG1xOWJ4cWtzbGhldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mGOfFjRCnoGPcLqYoA/giphy.gif" width = 80px>  </picture> “CHECKLIST — ANÁLISIS OFENSIVO DE ARCHIVOS .JS ”
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc255bzh6OWZqdGI1eW54eGFiYjg1ZGt6cjJ5YzA5MDMwZzV2YjM0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3uKw2QfFkJ6zyvD5cU/giphy.gif" width = 80px>  </picture> “CHECKLIST — ANÁLISIS OFENSIVO DE ARCHIVOS .JS ”
 
 
 
@@ -315,7 +313,7 @@ BONUS: Muchos programas bug bounty pagan más por bugs descubiertos en .js que p
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjdrZDd3eHBkaTloYXJ6dWYyNTV6bWhwZ3AwOG1xOWJ4cWtzbGhldyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mGOfFjRCnoGPcLqYoA/giphy.gif" width = 80px>  </picture> “Investigación propia”
+### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9qZDE2NG00dmdxMzBvbzJmOHJycnplYWZwZmNrZTdpcTVyNXM5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eyjs7st5OcMXSw7mjV/giphy.gif" width = 80px>  </picture> “Investigación propia”
 
 
 •
@@ -324,6 +322,23 @@ BONUS: Muchos programas bug bounty pagan más por bugs descubiertos en .js que p
 •
 •
 •
+
+
+
+
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Palabras claves”
+
+
+
+```yaml
+
+
+```
+
 
 
 
