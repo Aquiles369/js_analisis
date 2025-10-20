@@ -59,7 +59,7 @@ En bug bounty, leer el .js es como mirar detrás del telón: ahí están los sec
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWoxdW43NjQ5NjhocHF6NnA2MmQ4OHloZWEyc2R1M2t6Z3FkMWhsZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/iuJEr72fj83GJy4tJn/giphy.gif" width = 80px>  </picture> Índice 
 <br><br>
 
-- [🔎 Introducción](#-Checklist , análisis de archivos .js)
+- [🔎 Introducción](#checklist--análisis-de-archivos-js)
 - [⚔️ Técnicas de Análisis](#️-técnicas-de-análisis)
 - [📜 Informes Relacionados](#-informes-relacionados)
 - [🧪 Herramientas Recomendadas](#-herramientas-recomendadas)
