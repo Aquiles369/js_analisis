@@ -335,6 +335,80 @@ BONUS: Muchos programas bug bounty pagan más por bugs descubiertos en .js que p
 
 
 ```yaml
+Keywords (EN)
+
+javascript exposure, sensitive data in JS, api key leak, API key exposed, hardcoded secrets, hardcoded credentials, client-side logic, endpoint discovery, hidden endpoints, JS recon, JavaScript analysis, JavaScript secrets, JavaScript sensitive info, token leak, source code leak, client validation bypass, frontend leak, JS sensitive info disclosure, sensitive routes, hidden routes, internal API, internal endpoint, debug parameter, exposed config, public .js file, javascript mapping, client-side routes, hidden admin path, endpoint enumeration, javascript attack surface, javascript reverse engineering.
+
+```  
+
+```yaml
+ Keywords (ES)
+
+análisis de archivos JS, fuga de información en JavaScript, datos sensibles en JS, claves expuestas, secretos en el frontend, credenciales embebidas, endpoints ocultos, rutas internas, bypass de validación del lado del cliente, filtración en archivos .js, reconocimiento JS, descubrimiento de rutas, parámetros de depuración, superficie de ataque JS, lógica expuesta en el cliente, endpoints internos, API interna, análisis de código JavaScript, tokens expuestos, filtración de configuración, archivos JS públicos, enumeración de endpoints, JS sensible, filtración de rutas.
+```
+<br>
+
+## Dorks útiles <br><br>
+
+
+Medium (artículos / writeups)
+```yaml 
+site:medium.com ("javascript exposure" OR "api key leak" OR "sensitive data in JS")
+``` 
+```yaml
+site:medium.com/tag/security "javascript file analysis"
+```  
+```yam
+site:medium.com "bug bounty" "javascript secrets"
+```
+
+HackerOne 
+```yam
+site:hackerone.com/reports "javascript" "sensitive data"
+```
+```yam
+site:hackerone.com/reports "api key exposed" OR "hardcoded secret"
+```
+```yam
+site:hackerone.com/reports "frontend leak"
+```
+
+Bugcrowd / Intigriti / Holistic
+```yam
+site:bugcrowd.com/disclosures "javascript file"
+```
+```yam
+site:intigriti.com blog "javascript secrets"
+```
+```yam
+site:securitylab.github.com "api key" "javascript"
+```
+
+📚 PortSwigger / Labs / Cheatsheets
+site:portswigger.net "javascript exposure"
+site:portswigger.net/web-security "client-side exposure"
+site:portswigger.net/web-security "api key leak"
+
+🛠️ PentesterLab / THM / HTB (guías y labs)
+site:pentesterlab.com "javascript analysis"
+site:tryhackme.com "api key leak"
+site:academy.hackthebox.com "javascript exposure"
+
+🐙 GitHub (herramientas y listas)
+site:github.com "javascript secrets" "bug bounty" recon
+site:github.com "js endpoint discovery" tool
+site:gist.github.com "api key leak" "javascript"
+
+💬 Reddit (experiencias reales)
+site:reddit.com/r/bugbounty "javascript exposure"
+site:reddit.com/r/bugbounty "api key" "frontend"
+
+📄 PDF académicos / empresariales
+filetype:pdf "javascript sensitive data exposure" -site:owasp.org
+filetype:pdf "api key leak" "javascript" 
+
+⏱️ Filtro temporal (bonus)
+after:2024-01-01 "javascript exposure" OR "api key leak"
 
 
 ```
