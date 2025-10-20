@@ -461,6 +461,8 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 
 #  4
 
+**“En esta sección encontrarás 40 informes reales sobre análisis de .js que leí, estudié y anoté. Podés copiarlos directamente, importarlos en JSON con mis notas o cargarlos masivamente en tu gestor.”**
+
 ## Lista de informes link directo
 ```yam
 
