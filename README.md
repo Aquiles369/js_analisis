@@ -52,9 +52,6 @@ Los archivos JavaScript públicos suelen filtrar información sensible, como end
 En bug bounty, leer el .js es como mirar detrás del telón: ahí están los secretos que el frontend no debía mostrar.<br>
 
 
-• Formato: interfaz web local (HTML/JS). Data en localStorage (offline, en tu máquina).<br>
-
-
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
