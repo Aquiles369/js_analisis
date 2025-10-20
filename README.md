@@ -84,7 +84,7 @@ subjs, linkfinder, JSFinder
 
 Interpretación:
 
-🟢 Solo librerías externas → ✅ superficie mínima.
+🟢 Solo librerías externas →  superficie mínima.
 
 🟡 Archivos internos pero minificados →  potencial oculto.
 
@@ -115,9 +115,6 @@ Interpretación:
 🟡 Endpoints no documentados →  recon útil.
 
 🔴 Rutas internas o admin →  expansión de superficie.
-
-Encontrar /admin/backup o /api/internal/config en un .js = joya para cadenas de explotación.
-
 
 
 
@@ -304,9 +301,6 @@ Archivo main.js:
 
 fetch("/api/admin/delete?user=" + userId);
 
-
-- Hallazgo: parámetro user controlado → explotación de IDOR crítico sin autenticación.
-BONUS: Muchos programas bug bounty pagan más por bugs descubiertos en .js que por vulnerabilidades clásicas, porque implican acceso profundo al sistema sin interacción directa.
 ```
 
 <br>
@@ -384,34 +378,99 @@ site:intigriti.com blog "javascript secrets"
 site:securitylab.github.com "api key" "javascript"
 ```
 
-📚 PortSwigger / Labs / Cheatsheets
+PortSwigger / Labs / Cheatsheets
+```yam
 site:portswigger.net "javascript exposure"
+```
+```yam
 site:portswigger.net/web-security "client-side exposure"
+```
+```yam
 site:portswigger.net/web-security "api key leak"
+```
 
-🛠️ PentesterLab / THM / HTB (guías y labs)
+PentesterLab / THM / HTB (guías y labs)
+```yam
 site:pentesterlab.com "javascript analysis"
+```
+```yam
 site:tryhackme.com "api key leak"
+```
+```yam
 site:academy.hackthebox.com "javascript exposure"
+```
 
-🐙 GitHub (herramientas y listas)
+GitHub (herramientas y listas)
+```yam
 site:github.com "javascript secrets" "bug bounty" recon
-site:github.com "js endpoint discovery" tool
-site:gist.github.com "api key leak" "javascript"
-
-💬 Reddit (experiencias reales)
-site:reddit.com/r/bugbounty "javascript exposure"
-site:reddit.com/r/bugbounty "api key" "frontend"
-
-📄 PDF académicos / empresariales
-filetype:pdf "javascript sensitive data exposure" -site:owasp.org
-filetype:pdf "api key leak" "javascript" 
-
-⏱️ Filtro temporal (bonus)
-after:2024-01-01 "javascript exposure" OR "api key leak"
-
 
 ```
+```yam
+site:github.com "js endpoint discovery" tool
+
+```
+```yam
+site:gist.github.com "api key leak" "javascript"
+
+```
+
+Reddit 
+```yam
+site:reddit.com/r/bugbounty "javascript exposure"
+```
+```yam
+site:reddit.com/r/bugbounty "api key" "frontend"
+```
+
+PDF académicos 
+
+```yam
+filetype:pdf "javascript sensitive data exposure" -site:owasp.org
+```
+```yam
+filetype:pdf "api key leak" "javascript" 
+```
+
+Filtro temporal
+```yam
+after:2024-01-01 "javascript exposure" OR "api key leak"
+```
+
+
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Informes 40 de diferentes plataformas”
+
+## Lista de informes link directo
+```yam
+
+```
+<br>
+
+## json importar tools con mis notas
+
+<br>
+
+## Lo que aprendí leyendo de esos informes
+
+
+• <br><br>
+• <br><br>
+• <br><br>
+• <br><br>
+• <br><br>
+
+
+
+
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “img mapas mentales”
+
 
 
 
