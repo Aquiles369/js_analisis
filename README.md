@@ -457,7 +457,7 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> 40 Informes diferentes
+### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2k3eHk2YXB1bTdld20xZWRsaXduNjdlcmc0dHBseWxlZ2J5MnlpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/bsvz1MTmt9PIMDi1rc/giphy.gif" width = 80px>  </picture> 40 Informes diferentes
 
 #  4
 
