@@ -369,36 +369,35 @@ fetch("/api/admin/delete?user=" + userId);
 
 | Estandares | Descripción |
 |------|-------------|
-| `--CWE-79` | XSS / DOM XSS por neutralización insuficiente de input/output. Evitar innerHTML/document.write; validar y encodar salida. URL: https://cwe.mitre.org/data/definitions/79.html |
-| `--CWE-116` | Escape/encoding inadecuado que facilita XSS y otras inyecciones. Aplicar encoding contextual (HTML/JS/URL). URL: https://cwe.mitre.org/data/definitions/116.html |
-| `--CWE-95` | Eval Injection — uso de eval/new Function con datos no confiables → ejecución de código. Eliminar evaluadores dinámicos. URL: https://cwe.mitre.org/data/definitions/95.html |
-| `--CWE-94` | Improper Control of Generation of Code — generación dinámica de código desde entrada no controlada. Validar y sanear fuertemente. URL: https://cwe.mitre.org/data/definitions/94.html |
-| `--CWE-829` | Inclusión de funcionalidad desde fuentes no confiables (CDN/scripts comprometidos). Usar SRI, CSP y auditar dependencias. URL: https://cwe.mitre.org/data/definitions/829.html |
-| `--CWE-798` | Credenciales / keys hardcodeadas en JS/frontend. No almacenar secretos en el cliente; usar vault/servidor. URL: https://cwe.mitre.org/data/definitions/798.html |
-| `--CWE-312 / CWE-200 / CWE-215` | Exposición de información sensible (localStorage, logs, comentarios, respuestas). Evitar almacenar/mostrar secretos; revisar mensajes de error. URL: https://cwe.mitre.org/ |
-| `--CWE-1321` | Prototype Pollution en objetos JS (modificación de __proto__ / merges inseguros). Validar keys; evitar merges recursivos inseguros. URL: https://cwe.mitre.org/data/definitions/1321.html |
-| `--CVE-2020-11022` | jQuery — XSS vía ciertos métodos DOM; ejemplo de patrón a detectar. Actualizar jQuery. URL: https://nvd.nist.gov/vuln/detail/CVE-2020-11022 |
-| `--CVE-2020-11023` | jQuery — XSS relacionado con <option> al insertar HTML. Parchear y sanitizar inputs. URL: https://nvd.nist.gov/vuln/detail/CVE-2020-11023 |
-| `--CVE-2021-23337` | lodash _.template — inyección/ejecución si se procesan plantillas sin control. Actualizar lodash. URL: https://nvd.nist.gov/vuln/detail/CVE-2021-23337 |
-| `--CAPEC-63` | Cross-Site Scripting — patrón general (incluye DOM XSS). Identificar sinks (innerHTML, insertAdjacentHTML, document.write) y aplicar sanitización/encoding. URL: https://capec.mitre.org/data/definitions/63.html |
-| `--CAPEC-242` | Code Injection — vectores eval/Function/plantillas que generan código. Eliminar evaluadores dinámicos o aplicar whitelists. URL: https://capec.mitre.org/data/definitions/242.html |
-| `--CAPEC-591 / CAPEC-592` | Reflected / Stored XSS — clasificación práctica para reportes y priorización de explotabilidad. URL: https://capec.mitre.org/ |
-| `--RFC 9110` | HTTP Semantics — cabeceras y comportamientos HTTP que afectan parseo, caché y seguridad de recursos usados por JS. Revisar Content-Type, Cache-Control, Vary. URL: https://www.rfc-editor.org/rfc/rfc9110.html |
-| `--RFC 6454` | The Web Origin Concept — base de Same-Origin Policy; clave para postMessage, CORS y separación de orígenes en JS. URL: https://www.rfc-editor.org/rfc/rfc6454.html |
-| `--charsets utf_16 utf_32 ...` | Lista personalizada de charsets |
-| `--RFC 3986` | URI Syntax — normalización/validación de URIs; importante al construir URLs en JS y discovery de endpoints. URL: https://www.rfc-editor.org/rfc/rfc3986.html |
-| `--RFC 6455` | WebSocket — handshake / Origin header; revisar usos de WS desde código cliente y validar Origin. URL: https://www.rfc-editor.org/rfc/rfc6455.html |
-| `--OWASP Top 10 (2021)` | A03 Injection (XSS mapeado aquí). Usar Top10 como checklist de riesgos prioritarios y guía de mitigaciones. URL: https://owasp.org/Top10/ |
-| `--NIST SP 800-218 (SSDF)` | Secure Software Development Framework — integrar prácticas de ciclo de vida: SCA, SAST, evitar eval, revisar dependencias JS en CI/CD. URL: https://csrc.nist.gov/pubs/sp/800/218/final |
-| `--NIST SP 800-53 Rev.5` | Controles aplicables (ej. SI-10 Input Validation) útiles para mapear requisitos y controles de validación/mitigación. URL: https://csrc.nist.gov/pubs/sp/800/53/r5/final |
-| `--NIST SP 800-53 Rev.5` | Controles aplicables (ej. SI-10 Input Validation) útiles para mapear requisitos y controles de validación/mitigación. URL: https://csrc.nist.gov/pubs/sp/800/53/r5/final |
-| `--ASVS v4 / v5 — V5` | Validation, Sanitization & Encoding — encode salida y validar entradas usadas por JS/DOM. URL: https://owasp.org/www-project-application-security-verification-standard/ |
-| `--ASVS v4 / v5 — V10` | Malicious Code — prohibir eval, Function, setTimeout(string) y bibliotecas no confiables; validar dependencias. URL: https://owasp.org/www-project-application-security-verification-standard/ |
-| `--ASVS v4 / v5 — V14` | Config — CSP estricta y SRI (Subresource Integrity) para <script> externos; políticas de carga de recursos. URL: https://owasp.org/www-project-application-security-verification-standard/ |
-| `--MITRE ATT&CK — T1190` | Exploit Public-Facing Application — si el JS vulnerable está expuesto públicamente puede ser vector de acceso inicial. URL: https://attack.mitre.org/techniques/T1190/ |
-| `--MITRE ATT&CK — T1552` | Unsecured Credentials — credenciales expuestas en JS → exfiltración/uso. Escaneo de secretos y rotación. URL: https://attack.mitre.org/techniques/T1552/ |
-| `--MITRE ATT&CK — T1027` | Obfuscated Files & Info — ofuscación/packing de JS (mal uso o supply-chain). Analizar ofuscación y comprobar integridad. URL: https://attack.mitre.org/techniques/T1027/ |
-| `--MITRE ATT&CK — T1195` | Supply Chain Compromise — dependencias NPM/CDN comprometidas inyectan código en bundles finales. Auditar dependencias y pinear versiones. URL: https://attack.mitre.org/techniques/T1195/ |
+| `CWE-79` | XSS / DOM XSS por neutralización insuficiente de input/output. Evitar innerHTML/document.write; validar y encodar salida. URL: https://cwe.mitre.org/data/definitions/79.html |
+| `CWE-116` | Escape/encoding inadecuado que facilita XSS y otras inyecciones. Aplicar encoding contextual (HTML/JS/URL). URL: https://cwe.mitre.org/data/definitions/116.html |
+| `CWE-95` | Eval Injection — uso de eval/new Function con datos no confiables → ejecución de código. Eliminar evaluadores dinámicos. URL: https://cwe.mitre.org/data/definitions/95.html |
+| `CWE-94` | Improper Control of Generation of Code — generación dinámica de código desde entrada no controlada. Validar y sanear fuertemente. URL: https://cwe.mitre.org/data/definitions/94.html |
+| `CWE-829` | Inclusión de funcionalidad desde fuentes no confiables (CDN/scripts comprometidos). Usar SRI, CSP y auditar dependencias. URL: https://cwe.mitre.org/data/definitions/829.html |
+| `CWE-798` | Credenciales / keys hardcodeadas en JS/frontend. No almacenar secretos en el cliente; usar vault/servidor. URL: https://cwe.mitre.org/data/definitions/798.html |
+| `CWE-312 / CWE-200 / CWE-215` | Exposición de información sensible (localStorage, logs, comentarios, respuestas). Evitar almacenar/mostrar secretos; revisar mensajes de error. URL: https://cwe.mitre.org/ |
+| `CWE-1321` | Prototype Pollution en objetos JS (modificación de __proto__ / merges inseguros). Validar keys; evitar merges recursivos inseguros. URL: https://cwe.mitre.org/data/definitions/1321.html |
+| `CVE-2020-11022` | jQuery — XSS vía ciertos métodos DOM; ejemplo de patrón a detectar. Actualizar jQuery. URL: https://nvd.nist.gov/vuln/detail/CVE-2020-11022 |
+| `CVE-2020-11023` | jQuery — XSS relacionado con <option> al insertar HTML. Parchear y sanitizar inputs. URL: https://nvd.nist.gov/vuln/detail/CVE-2020-11023 |
+| `CVE-2021-23337` | lodash _.template — inyección/ejecución si se procesan plantillas sin control. Actualizar lodash. URL: https://nvd.nist.gov/vuln/detail/CVE-2021-23337 |
+| `CAPEC-63` | Cross-Site Scripting — patrón general (incluye DOM XSS). Identificar sinks (innerHTML, insertAdjacentHTML, document.write) y aplicar sanitización/encoding. URL: https://capec.mitre.org/data/definitions/63.html |
+| `CAPEC-242` | Code Injection — vectores eval/Function/plantillas que generan código. Eliminar evaluadores dinámicos o aplicar whitelists. URL: https://capec.mitre.org/data/definitions/242.html |
+| `CAPEC-591 / CAPEC-592` | Reflected / Stored XSS — clasificación práctica para reportes y priorización de explotabilidad. URL: https://capec.mitre.org/ |
+| `RFC 9110` | HTTP Semantics — cabeceras y comportamientos HTTP que afectan parseo, caché y seguridad de recursos usados por JS. Revisar Content-Type, Cache-Control, Vary. URL: https://www.rfc-editor.org/rfc/rfc9110.html |
+| `RFC 6454` | The Web Origin Concept — base de Same-Origin Policy; clave para postMessage, CORS y separación de orígenes en JS. URL: https://www.rfc-editor.org/rfc/rfc6454.html |
+| `RFC 3986` | URI Syntax — normalización/validación de URIs; importante al construir URLs en JS y discovery de endpoints. URL: https://www.rfc-editor.org/rfc/rfc3986.html |
+| `RFC 6455` | WebSocket — handshake / Origin header; revisar usos de WS desde código cliente y validar Origin. URL: https://www.rfc-editor.org/rfc/rfc6455.html |
+| `OWASP Top 10 (2021)` | A03 Injection (XSS mapeado aquí). Usar Top10 como checklist de riesgos prioritarios y guía de mitigaciones. URL: https://owasp.org/Top10/ |
+| `NIST SP 800-218 (SSDF)` | Secure Software Development Framework — integrar prácticas de ciclo de vida: SCA, SAST, evitar eval, revisar dependencias JS en CI/CD. URL: https://csrc.nist.gov/pubs/sp/800/218/final |
+| `NIST SP 800-53 Rev.5` | Controles aplicables (ej. SI-10 Input Validation) útiles para mapear requisitos y controles de validación/mitigación. URL: https://csrc.nist.gov/pubs/sp/800/53/r5/final |
+| `NIST SP 800-53 Rev.5` | Controles aplicables (ej. SI-10 Input Validation) útiles para mapear requisitos y controles de validación/mitigación. URL: https://csrc.nist.gov/pubs/sp/800/53/r5/final |
+| `ASVS v4 / v5 — V5` | Validation, Sanitization & Encoding — encode salida y validar entradas usadas por JS/DOM. URL: https://owasp.org/www-project-application-security-verification-standard/ |
+| `ASVS v4 / v5 — V10` | Malicious Code — prohibir eval, Function, setTimeout(string) y bibliotecas no confiables; validar dependencias. URL: https://owasp.org/www-project-application-security-verification-standard/ |
+| `ASVS v4 / v5 — V14` | Config — CSP estricta y SRI (Subresource Integrity) para <script> externos; políticas de carga de recursos. URL: https://owasp.org/www-project-application-security-verification-standard/ |
+| `MITRE ATT&CK — T1190` | Exploit Public-Facing Application — si el JS vulnerable está expuesto públicamente puede ser vector de acceso inicial. URL: https://attack.mitre.org/techniques/T1190/ |
+| `MITRE ATT&CK — T1552` | Unsecured Credentials — credenciales expuestas en JS → exfiltración/uso. Escaneo de secretos y rotación. URL: https://attack.mitre.org/techniques/T1552/ |
+| `MITRE ATT&CK — T1027` | Obfuscated Files & Info — ofuscación/packing de JS (mal uso o supply-chain). Analizar ofuscación y comprobar integridad. URL: https://attack.mitre.org/techniques/T1027/ |
+| `MITRE ATT&CK — T1195` | Supply Chain Compromise — dependencias NPM/CDN comprometidas inyectan código en bundles finales. Auditar dependencias y pinear versiones. URL: https://attack.mitre.org/techniques/T1195/ |
 
 
 
