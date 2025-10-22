@@ -370,10 +370,10 @@ fetch("/api/admin/delete?user=" + userId);
 | Estandares | Descripción |
 |------|-------------|
 | `--CWE-79` | XSS / DOM XSS por neutralización insuficiente de input/output. Evitar innerHTML/document.write; validar y encodar salida. URL: https://cwe.mitre.org/data/definitions/79.html |
-| `--input-file payloads.txt` | Archivo con lista de payloads |
-| `--modes special_only full_payload` | Modos de mutación (`special_only` / `full_payload`) |
-| `--output-dir out` | Directorio de salida (por defecto: `out`) |
-| `--skip-broken` | Saltar charsets que no soportan los caracteres (default) |
+| `--CWE-116` | Escape/encoding inadecuado que facilita XSS y otras inyecciones. Aplicar encoding contextual (HTML/JS/URL). URL: https://cwe.mitre.org/data/definitions/116.html |
+| `--CWE-95` | Eval Injection — uso de eval/new Function con datos no confiables → ejecución de código. Eliminar evaluadores dinámicos. URL: https://cwe.mitre.org/data/definitions/95.html |
+| `--CWE-94` | Improper Control of Generation of Code — generación dinámica de código desde entrada no controlada. Validar y sanear fuertemente. URL: https://cwe.mitre.org/data/definitions/94.html |
+| `--CWE-829` | Inclusión de funcionalidad desde fuentes no confiables (CDN/scripts comprometidos). Usar SRI, CSP y auditar dependencias. URL: (https://cwe.mitre.org/data/definitions/829.html) |
 | `--include-broken` | Incluir variantes rotas (rellenando con vacío) |
 | `--base-charset utf-8` | Charset base para caracteres no especiales |
 | `--charsets utf_16 utf_32 ...` | Lista personalizada de charsets |
