@@ -340,6 +340,99 @@ fetch("/api/admin/delete?user=" + userId);
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> CWE , CVE , CAPEC , RFCs , OWASP , NIST , ASVS , MITRE ATT&CK
+
+#  3
+
+**Los archivos .js y librerías cliente pueden introducir vectores de ejecución (XSS/Template Eval), exposición de secretos y contaminación del entorno (prototype pollution / supply-chain), que permiten desde robo de sesiones hasta ejecución remota y persistente en el navegador.**
+
+<br><br>
+
+• CWE: clasifica la falla técnica (ej. CWE-79 = XSS, CWE-95/94 = eval/code injection, CWE-1321 = prototype pollution). Sirve para nombrar la vulnerabilidad técnica en el informe.<br><br>
+
+• CVE: casos reales explotables en librerías (ej. jQuery, lodash). Muestra ejemplos prácticos y versiones parcheadas; útil para compararlo con dependencias del target.<br><br>
+
+• CAPEC: describe el patrón de ataque (p. ej. CAPEC-63 = XSS). Te ayuda a explicar la técnica al equipo de riesgos y priorizar mitigaciones.<br><br>
+
+• RFCs: normas técnicas (HTTP, Same-Origin, Cookies, WebSocket, URIs) que definen la plataforma; explicar violaciones a nivel protocolo (CORS mal configurado, cookies sin HttpOnly).<br><br>
+
+• OWASP / ASVS: guías y controles aplicables en la app (Top10 para prioridades; ASVS para requisitos verificables como “no usar eval” o CSP+SRI).<br><br>
+
+• NIST: marco de procesos y controles (SSDF, SP800-53) para incorporar prevención en el ciclo de desarrollo y auditoría.<br><br>
+
+• MITRE ATT&CK: mapea el impacto con tácticas/tecnicas del adversario (exfiltración, initial access, supply chain) para TI/blue team y reportes ejecutivos.
+
+<br><br>
+
+
+>  Usa esta tabla como como guia `analisis de archivos .js` :
+
+| Estandares | Descripción |
+|------|-------------|
+| `--` | Payload único a mutar |
+| `--input-file payloads.txt` | Archivo con lista de payloads |
+| `--modes special_only full_payload` | Modos de mutación (`special_only` / `full_payload`) |
+| `--output-dir out` | Directorio de salida (por defecto: `out`) |
+| `--skip-broken` | Saltar charsets que no soportan los caracteres (default) |
+| `--include-broken` | Incluir variantes rotas (rellenando con vacío) |
+| `--base-charset utf-8` | Charset base para caracteres no especiales |
+| `--charsets utf_16 utf_32 ...` | Lista personalizada de charsets |
+| `--report-unsupported` | Solo imprime qué caracteres son soportados por cada charset y termina |
+
+
+
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> Dónde buscar funciones / ejemplos
+
+#  3
+
+**aqui encontras enque parte bsucar  archivos .js **
+
+
+• XSS DOM/reflected → robo de cookies/localStorage, CSRF ampliado, persistencia de scripts.<br><br>
+
+• Eval/Template injection → ejecución arbitraria de código en el cliente (posible pivot).<br><br>
+
+• Hardcoded keys / secrets → credenciales expuestas → abuso de APIs.<br><br>
+
+• Prototype pollution → lógica rota en toda la app; posibles RCE en cadenas complejas.<br><br>
+
+• Dependencias comprometidas → inyección a gran escala (supply-chain).
+
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
+
+
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> Impacto y cómo escalar
+
+#  3
+
+**aqui encontras enque parte bsucar  archivos .js **
+
+
+
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
+
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> Concatenación con otras vulnerabilidades
+
+#  3
+
+**aqui encontras enque parte bsucar  archivos .js **
+
+
+
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
 ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Palabras claves y Dorks”
 
 #  3
@@ -485,6 +578,36 @@ Utilizar mi tool de gestor de informe para poder subir masivamente los informes 
 
 
 
+<br>
+<picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
+<br>
+
+
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> Hardening / mitigation
+
+
+#  5
+
+1. Mitigaciones clave (prácticas inmediatas)<br><br>
+
+2. Eliminar eval, new Function, setTimeout(string). Reemplazar por parsers/sandboxed templates.<br><br>
+
+3. Contextual encoding/escaping: HTML encode para HTML, JS encode para datos dentro de scripts, URL-encode para parámetros.<br><br>
+
+4. CSP estricta + SRI en scripts externos + bloquear inline scripts cuando sea posible.<br><br>
+
+5. No almacenar secretos en frontend; mover a backend / vault. Escanear repos por secrets y rotarlos.<br><br>
+
+6. Auditar y fijar versiones de dependencias (SCA), revisar changelogs y aplicar parches.<br><br>
+
+7. Validar Origin/Referer en WebSockets/postMessage; configurar CORS restricto.<br><br>
+
+8. Protección contra prototype pollution: limpiar keys (denylist __proto__, constructor, prototype), evitar merges inseguros.<br><br>
+
+9. Sanitizar entradas antes de renderizar en el DOM; preferir APIs seguras (textContent, setAttribute con valores seguros).
+
+
+
 
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
@@ -494,6 +617,9 @@ Utilizar mi tool de gestor de informe para poder subir masivamente los informes 
 
 
 #  5
+
+**en esta secione cnontras lab apra poder pracitar**
+
 
 
 <br>
