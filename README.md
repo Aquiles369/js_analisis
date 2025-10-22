@@ -369,7 +369,7 @@ fetch("/api/admin/delete?user=" + userId);
 
 | Estandares | Descripción |
 |------|-------------|
-| `--` | Payload único a mutar |
+| `--CWE-79` | XSS / DOM XSS por neutralización insuficiente de input/output. Evitar innerHTML/document.write; validar y encodar salida. URL: https://cwe.mitre.org/data/definitions/79.html |
 | `--input-file payloads.txt` | Archivo con lista de payloads |
 | `--modes special_only full_payload` | Modos de mutación (`special_only` / `full_payload`) |
 | `--output-dir out` | Directorio de salida (por defecto: `out`) |
