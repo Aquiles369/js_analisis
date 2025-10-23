@@ -422,6 +422,85 @@ fetch("/api/admin/delete?user=" + userId);
 
 • Dependencias comprometidas → inyección a gran escala (supply-chain).
 
+<br><br>
+
+
+
+- Encontrar el sourceMappingURL rápido (desde la web)
+
+Abrí DevTools > Network > filtrar por JS, o abrí la URL del .js en el navegador y buscá al final: //# sourceMappingURL=...<br><br>
+
+Línea de comando (si ya tenés la URL del .js):<br><br>
+
+curl -s https://example.com/static/app.min.js | tail -n 10<br><br>
+
+
+- Busca sourceMappingURL= en la salida.
+
+Descargar los archivos (si el sourceMappingURL es una URL)<br><br>
+
+curl -LO https://example.com/static/app.min.js <br><br>
+curl -LO https://example.com/static/app.min.js.map<br><br>
+
+
+Si la segunda devuelve 404, a veces el mapa está con otro nombre o no está expuesto.<br><br>
+
+Extraer y guardar el source map si está inline (data:application/json;base64,...)<br><br>
+
+# descarga el .js primero
+curl -s https://example.com/static/app.min.js -o app.min.js<br><br>
+# extrae la parte base64 y decodifica
+tail -n 10 app.min.js | sed -n 's/.*base64,//p' | tr -d '\r\n' | base64 -d > app.min.js.map<br><br>
+
+
+Si no aparece en tail, probá con grep -Po 'sourceMappingURL=.*' app.min.js.<br><br>
+
+Ver qué archivos originales contiene el .map (rápido)<br><br>
+
+jq '.sources' app.min.js.map<br><br>
+
+
+Eso te muestra rutas/nombres de archivos originales, pistas directas de estructura del repo.<br><br>
+
+Abrir en la herramienta de visualización (tu URL)<br><br>
+
+Ir a https://sokra.github.io/source-map-visualization/<br><br>
+
+Arrastrar y soltar app.min.js y app.min.js.map o pegar las URLs.<br><br>
+
+Panel izquierdo: generated; derecho: original; abajo: mappings. Pasá el cursor por los bloques para ver correspondencias.<br><br>
+
+Buscar secretos y endpoints manualmente (comandos rápidos)<br><br>
+
+# buscar claves y palabras sensibles en el código original ya mapeado
+rg -n --hidden -S 'apiKey|api_key|apikey|token|secret|passwd|password|clientId|accessKey|aws_access_key|private' path/to/originals/<br><br>
+# si solo tenés app.min.js y app.min.js.map, podés buscar en el map por strings expuestos
+rg -n 'apiKey|token|secret|password|clientId|endpoint|internal' app.min.js app.min.js.map<br><br>
+
+
+Si no tenés rg, usá grep -RInE 'apiKey|token|secret|password|clientId|endpoint' .<br><br>
+
+Opciones rápidas para entender el bundle<br><br>
+
+Ver qué archivos pesan más (ayuda a saber dónde buscar):<br><br>
+
+npx source-map-explorer app.min.js app.min.js.map<br><br>
+
+
+Pretty-print en DevTools: abrí el .js en Sources y hacé clic en "{}" para formatear; si el source map está activo, verás las fuentes originales.<br><br>
+
+Qué mirar primero (prioridad bug bounty)<br><br>
+
+Nombres y rutas originales que contengan "config", "secret", "env", "credentials".<br><br>
+
+Endpoints internos, URLs hacia APIs privadas, dominios internos.<br><br>
+
+Comentarios TODO, FIXME, credenciales en texto plano.<br><br>
+
+Uso de eval, new Function, innerHTML, document.write o concatenaciones peligrosas que formen URLs.<br><br>
+
+Cualquier referencia a keys de terceros (Stripe, Firebase, AWS, etc).<br><br>
+
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
