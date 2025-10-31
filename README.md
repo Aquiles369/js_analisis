@@ -5852,22 +5852,43 @@ Resumen:
 Crawl profundo (depth-first) con análisis JS, extracción de formularios y archivos, resultados en katana-df.txt.
 
 ```
+
+
+<br><br>
+```yaml
+Recolectar con Burp Suite fitrandos extenciones de archivos js etc en configuracion y scoupe limitar solo al tarjet
+navegador por el sitio web en cada funcion etc para recolectar archivos estaticos como dinamicos y luego repetir este proceso
+estando autenticado etc.
+
+```
+
+
+
 <br><br>
 
 
  3- Paso de uso de las herramientas creadas.
 
 ```yaml
-
+Usar el scrpyt tool 1 reglas regex  140 aproximado lanzar bash  el archivo analizar de a uno para mirar algo rapido a ver si sale
 
 ```
+<br><br>
+
+```yaml
+Usar el scrpyt tool 2  de las 70 categorias con sus 200 palabras claves en cada categoria lanzar bash  el archivo analizar de a uno para mirar algo rapido a ver si sale
+
+```
+
 <br><br>
 
 
  4- Paso de análisis manual entendiendo la lógica.
 
 ```yaml
-
+Usar la tool 3 para analisis de js mas  a profundidad y ademas combinar con la IA que tiene el repo este y el contexto total
+buscar funciones ocultas , funciones vulnerables , logica mal construida , idor , inyeccion de plantilla , protype polluction / paramtros , cors , xss doom , rce ,
+open redirect etc.
 
 ```
 <br><br>
