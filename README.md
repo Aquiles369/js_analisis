@@ -1106,7 +1106,7 @@ Utilizar mi herramienta Gestor de Informes para subir informes masivamente y cre
 
 ## Importar JSON de herramientas con mis notas:
 
-• <a href="https://www.youtube.com/@NahamSec/search?query=metodologia" target="_blank" rel="noopener">JSON con notas personales de cada uno de los 182 informes de análisis de JavaScript</a>
+• <a href="https://github.com/Aquiles369/js_analisis/tree/main/assets/json_informes" target="_blank" rel="noopener">JSON con notas personales de cada uno de los 182 informes de análisis de JavaScript</a>
 
 
 <br><br>
@@ -4401,7 +4401,7 @@ La explotación comienza determinando si el sitio web es vulnerable a la contami
 Este artículo te ayudará a profundizar en el tema de la contaminación de prototipos. En las secciones "Características de JavaScript" y "Qué es la contaminación de prototipos", aprenderás cómo funcionan los objetos y prototipos de JavaScript y cómo sus características específicas pueden generar vulnerabilidades. En las secciones " Contaminación de prototipos del lado del cliente" y "Contaminación de prototipos del lado del servidor", aprenderás a buscar y explotar esta vulnerabilidad en casos reales. Finalmente, aprenderás a proteger tus aplicaciones y por qué el método de protección más común se puede eludir fácilmente.
 
 
-• <br><br>
+<br><br>
 
 
 
@@ -4410,10 +4410,9 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 <br>
 
 
-### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3J4cGg3dm5randjOW03ODJqMzBhcXo4aGV0bHY3aXpya3g1bXhwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mgQYcSomO5vbt7A9Cl/giphy.gif" width = 80px>  </picture> Hardening / mitigation
-<br>
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3J4cGg3dm5randjOW03ODJqMzBhcXo4aGV0bHY3aXpya3g1bXhwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mgQYcSomO5vbt7A9Cl/giphy.gif" width = 80px>  </picture> Hardening / mitigation 
+
 #  7
-<br>
 
 **En esta sección encontraremos cómo mitigar las vulnerabilidades asociadas al análisis de JavaScript.**
 <br><br>
@@ -4473,48 +4472,188 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 
 ## IMG
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251022-235403.png"/>
 
 <br><br>
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-005230.png"/>
 
 
 <br><br>
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
-
-<br><br>
-
-<br><br>
-
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-075353.png"/>
 
 <br><br>
 
 <br><br>
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-082626.png"/>
 
 <br><br>
 
 <br><br>
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-092744.png"/>
 
 <br><br>
 
 <br><br>
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251025-133825.png"/>
 
 <br><br>
 
 <br><br>
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-134719.png"/>
 
 <br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-141930.png"/>
+
+<br><br>
+
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-141930.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-143940.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-150204.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-150212.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-150219.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-150419.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-153145.png"/>
+
+<br><br>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-155123.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-155913.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-161537.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-221442.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-221528.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-221729.png"/>
+
+<br><br>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-224251.png"/>
+
+<br><br>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-224614.png"/>
+
+<br><br>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-232001.png"/>
+
+<br><br>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-232056.png"/>
+
+<br><br>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251027-003902.png"/>
+
+<br><br>
+
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251027-004753.png"/>
+
+<br><br>
+
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251027-004853.png"/>
+
+<br><br>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251028-112615.png"/>
+
+
 
 <br><br>
 
