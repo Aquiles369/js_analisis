@@ -784,7 +784,7 @@ Identificar plantillas, dinámicas de generación de subdominios o creación de 
 <br>
 
 
-### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Palabras claves y Dorks”
+### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3d1NGMwMHh6NHNuaXNxb2F6amtjM2lkNXVxdXVqcHYwaXNrd3ljbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/DqBvd3IKURc40jgCdZ/giphy.gif" width = 80px>  </picture> “Palabras claves y Dorks”
 
 #  5
 
@@ -906,7 +906,7 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2k3eHk2YXB1bTdld20xZWRsaXduNjdlcmc0dHBseWxlZ2J5MnlpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/bsvz1MTmt9PIMDi1rc/giphy.gif" width = 80px>  </picture> 40 Informes diferentes
+### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2NxY2JzdWxmeHVqeWtxenp5dTIybWxlMWZ6dnRmcTZsemNwYW4zYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/0Q6VlwzeMhuL7xFCKG/giphy.gif" width = 80px>  </picture> 40 Informes diferentes
 
 #  6
 
@@ -1104,7 +1104,7 @@ Utilizar mi herramienta Gestor de Informes para subir informes masivamente y cre
 <br><br>
 
 
-##Importar JSON de herramientas con mis notas:
+## Importar JSON de herramientas con mis notas:
 
 • <a href="https://www.youtube.com/@NahamSec/search?query=metodologia" target="_blank" rel="noopener">JSON con notas personales de cada uno de los 182 informes de análisis de JavaScript</a>
 
@@ -4410,51 +4410,52 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 <br>
 
 
-### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> Hardening / mitigation
-
+### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3J4cGg3dm5randjOW03ODJqMzBhcXo4aGV0bHY3aXpya3g1bXhwNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/mgQYcSomO5vbt7A9Cl/giphy.gif" width = 80px>  </picture> Hardening / mitigation
+<br>
 #  7
+<br>
 
 **En esta sección encontraremos cómo mitigar las vulnerabilidades asociadas al análisis de JavaScript.**
 <br><br>
 
 
-1. Mitigaciones clave (prácticas inmediatas)<br><br>
+- Mitigaciones clave (prácticas inmediatas)<br><br>
 
-2. Eliminar eval, new Function, setTimeout(string). Reemplazar por parsers/sandboxed templates.<br><br>
+- Eliminar eval, new Function, setTimeout(string). Reemplazar por parsers/sandboxed templates.<br><br>
 
-3. Contextual encoding/escaping: HTML encode para HTML, JS encode para datos dentro de scripts, URL-encode para parámetros.<br><br>
+- Contextual encoding/escaping: HTML encode para HTML, JS encode para datos dentro de scripts, URL-encode para parámetros.<br><br>
 
-4. CSP estricta + SRI en scripts externos + bloquear inline scripts cuando sea posible.<br><br>
+- CSP estricta + SRI en scripts externos + bloquear inline scripts cuando sea posible.<br><br>
 
-5. No almacenar secretos en frontend; mover a backend / vault. Escanear repos por secrets y rotarlos.<br><br>
+- No almacenar secretos en frontend; mover a backend / vault. Escanear repos por secrets y rotarlos.<br><br>
 
-6. Auditar y fijar versiones de dependencias (SCA), revisar changelogs y aplicar parches.<br><br>
+- Auditar y fijar versiones de dependencias (SCA), revisar changelogs y aplicar parches.<br><br>
 
-7. Validar Origin/Referer en WebSockets/postMessage; configurar CORS restricto.<br><br>
+- Validar Origin/Referer en WebSockets/postMessage; configurar CORS restricto.<br><br>
 
-8. Protección contra prototype pollution: limpiar keys (denylist __proto__, constructor, prototype), evitar merges inseguros.<br><br>
+- Protección contra prototype pollution: limpiar keys (denylist __proto__, constructor, prototype), evitar merges inseguros.<br><br>
 
-9. Sanitizar entradas antes de renderizar en el DOM; preferir APIs seguras (textContent, setAttribute con valores seguros) ,  utilizar DOMPurify.
+- Sanitizar entradas antes de renderizar en el DOM; preferir APIs seguras (textContent, setAttribute con valores seguros) ,  utilizar DOMPurify.
 
-10. No exponer tokens, paths internos ni subdominios no listados
+- No exponer tokens, paths internos ni subdominios no listados
 
-11. No exponer API keys ni credenciales en el frontend.
+- No exponer API keys ni credenciales en el frontend.
 
-12. No publicar rutas internas ni subdominios que no formen parte del scope público.
+- No publicar rutas internas ni subdominios que no formen parte del scope público.
    
-14. Eliminar o bloquear funciones de debug y lógica sensible en el cliente.
+- Eliminar o bloquear funciones de debug y lógica sensible en el cliente.
 
-15. No confiar en validaciones del lado cliente: validar siempre en el backend.
+- No confiar en validaciones del lado cliente: validar siempre en el backend.
 
-16. Mantener separación clara entre lo que puede ejecutarse/mostrarse en el navegador y lo que solo debe procesarse en el servidor.
+- Mantener separación clara entre lo que puede ejecutarse/mostrarse en el navegador y lo que solo debe procesarse en el servidor.
 
-17. No utilizar parámetros vulnerables para open redirect; en caso de necesidad, aplicar lista blanca y reglas regex en el WAF.
+- No utilizar parámetros vulnerables para open redirect; en caso de necesidad, aplicar lista blanca y reglas regex en el WAF.
 
-18. Cuidar la lógica para evitar inyección de plantillas.
+- Cuidar la lógica para evitar inyección de plantillas.
 
-19.  Protección contra parámetros prototype.
+-  Protección contra parámetros prototype.
 
-20.  Si le interesa profundizar en la protección frente al análisis de JavaScript y las vulnerabilidades que se pueden encontrar, le recomiendo revisar mis notas personales y los informes.
+-  Si le interesa profundizar en la protección frente al análisis de JavaScript y las vulnerabilidades que se pueden encontrar, le recomiendo revisar mis notas personales y los informes.
 
 
 
@@ -4463,7 +4464,7 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> “Recursos img entre otros”
+### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzhwcjVwbmRsazd6cTh3M3l2cmh1eTIxYmh3YmF6Yzk3c2ZuZzBvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/uRoZBofy2cTCvz18we/giphy.gif" width = 80px>  </picture> “Recursos img entre otros”
 
 #  8
 
