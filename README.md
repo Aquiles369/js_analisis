@@ -61,11 +61,15 @@ En bug bounty, leer el `.js` es como mirar detrás del telón: ahí están los s
 ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2gzOGF3Z2tqMWM3YzJ1ODE4aGhhaGgzbXlpbGMzbzBrMm40aDBrcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/5OJLBp60agyioEwpJf/giphy.gif" width = 80px>  </picture> Índice 
 <br><br>
 
-- [ Checklist , análisis de archivos .js](#1)
-- [Investigación propia](#2)
-- [Palabras claves y Dorks](#3)
-- [40 Informes diferentes](#4)
-- [Recursos img entre otros](#5)
+- [Tabla de CWE , CVE , CAPEC , RFCs , OWASP , NIST , ASVS , MITRE ATT&CK](#1)
+- [ Checklist , análisis de archivos .js](#2)
+- [ Investigación propia](#3)
+- [ Dónde buscar funciones / ejemplos](#4)
+- [ “Palabras claves y Dorks”](#5)
+- [182 Informes diferentes](#6)
+- [Hardening / mitigation](#7)
+- [“Recursos img entre otros”](#8)   
+ 
 
 
 
@@ -76,7 +80,7 @@ En bug bounty, leer el `.js` es como mirar detrás del telón: ahí están los s
 
 ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> CWE , CVE , CAPEC , RFCs , OWASP , NIST , ASVS , MITRE ATT&CK
 
-#  3
+#  1
 
 **Los archivos .js y librerías cliente pueden introducir vectores de ejecución (XSS/Template Eval), exposición de secretos y contaminación del entorno (prototype pollution / supply-chain), que permiten desde robo de sesiones hasta ejecución remota y persistente en el navegador.**
 
@@ -143,7 +147,7 @@ En bug bounty, leer el `.js` es como mirar detrás del telón: ahí están los s
 ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc255bzh6OWZqdGI1eW54eGFiYjg1ZGt6cjJ5YzA5MDMwZzV2YjM0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3uKw2QfFkJ6zyvD5cU/giphy.gif" width = 80px>  </picture>  Checklist , análisis de archivos .js
 <br><br>
 
-#  1
+#  2
 
 
 
@@ -391,7 +395,7 @@ fetch("/api/admin/delete?user=" + userId);
 
 ### <picture> <img src = "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNW9qZDE2NG00dmdxMzBvbzJmOHJycnplYWZwZmNrZTdpcTVyNXM5biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/eyjs7st5OcMXSw7mjV/giphy.gif" width = 80px>  </picture> Investigación propia
 
-#  2
+#  3
 
 **En esta sección se encuentra un breve resumen de la investigación que realicé, de la cual aprendí mucho conocimiento que desconocía anteriormente y quiero compartirlo, ya que me ayudó a comprender mucho mejor y tener una base sólida para poder leer luego los 200 informes de análisis de JavaScript y entenderlos más rápido.
 Además, me permitió identificar en qué áreas me faltaba más conocimiento o debía repasar.<br>
@@ -399,7 +403,7 @@ La parte relacionada con herramientas y sitios web la dejaré en la sección de 
 
 
 
-##Tipo de map y riesgo
+## Tipo de map y riesgo
 
 inline = map embebido en JS → expone todo si el JS está público.
 
@@ -410,7 +414,7 @@ nosources = menos riesgo (no incluye sourcesContent), pero aun así revela rutas
 
 <br><br>
 
-##Extraer sources y sourcesContent:
+## Extraer sources y sourcesContent:
 
 jq -r '.sources[]' app.min.js.map
 jq -r '.sourcesContent | length' app.min.js.map  # si existe mostrará >0
@@ -420,9 +424,9 @@ jq -r '.sourcesContent[]' app.min.js.map > combined_sources.js
 
 <br><br>
 
-##Metodología: 
+## Metodología: 
 
-katana -u https://target.com -jc
+katana -u target.com -jc
 
 subjs, linkfinder, JSFinder 
 
@@ -432,7 +436,7 @@ Analizá los endpoints activos con httpx, ffuf scar msa enpdio etc rutas, o tu p
 
 
 
-##¿Qué necesitas extra?:
+## ¿Qué necesitas extra?:
 
 source-map-explorer — te ayuda cuando tienes .map.
 
@@ -447,7 +451,7 @@ strings, ripgrep, grep — para extracción rápida.
 
 
 
-##Consejos para trabajar con sourcemaps (versión corregida y directa):
+## Consejos para trabajar con sourcemaps (versión corregida y directa):
 
 • Lo más importante suele estar en los JS minificados: embellecé el código primero.
 
@@ -503,7 +507,7 @@ rg -o "https?:\/\/[A-Za-z0-9\.\-]+" path/ | awk -F/ '{print $3}' | sort -u
 
 
 
-##Consejos en caso de encontrar una o varias reglas regex al analizar el código JavaScript::
+## Consejos en caso de encontrar una o varias reglas regex al analizar el código JavaScript::
 
 • Los mensajes de error y variables pueden estar en cualquier idioma (spanish: inválido, formato inválido), así que incluye variantes en búsquedas.
 Copiás la regex que encontraste en el .js o HTML (o la construís con new RegExp(...)).
@@ -550,9 +554,7 @@ Copiás la regex que encontraste en el .js o HTML (o la construís con new RegEx
 
 
 
-
-
-##Análisis de lógica interna con IA:
+## Análisis de lógica interna con IA:
 
 
 •  Prueba clave:
@@ -586,7 +588,7 @@ Chequeá CVEs con npm audit o Snyk
 
 
 
-##Vulnerabilidades relacionadas que deberías buscar al analizar código JavaScript:
+## Vulnerabilidades relacionadas que deberías buscar al analizar código JavaScript:
 
 • Open redirect.
 
@@ -610,11 +612,11 @@ Chequeá CVEs con npm audit o Snyk
 
 • RCE (cuando el JS desencadena ejecución de código en el servidor o en contextos peligrosos).
 
+<br><br>
+
 Céntrate en entender cómo funciona el código JavaScript para mapear la infraestructura y cómo piensa el desarrollador: busca patrones, rutas, validaciones incompletas y suposiciones lógicas que puedan convertirse en vectores de ataque. Si creés que se pueden añadir otras vulnerabilidades relacionadas con el análisis de JS, incluilas: todo lo que ayude a enriquecer el informe y el mapeo.
 
 <br><br>
-
-
 
 **Recordatorio: todo lo anterior debe aplicarse tanto a archivos estáticos como dinámicos, y en contextos sin autenticación y post-autenticación uedes usar Burp Suite para capturar todo el tráfico mientras navegas por el sitio.
 Limita el scope al objetivo para que en la historia de Burp solo aparezcan las requests del target. Cuando captures archivos dinámicos, configura correctamente las opciones de la extensión de captura para incluir los tipos de recurso que te interesan.<br><br>
@@ -624,17 +626,13 @@ Limita el scope al objetivo para que en la historia de Burp solo aparezcan las r
 
 
 
-<br><br>
-
-
-
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
 ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> Dónde buscar funciones / ejemplos
 
-#  3
+#  4
 
 **Sección: Dónde buscar el sourcemap y qué pasos seguir después**
 
@@ -649,6 +647,7 @@ Abrí DevTools > Network > filtrar por JS, o abrí la URL del .js en el navegado
 Línea de comando (si ya tenés la URL del .js):<br><br>
 
 curl -s https://example.com/static/app.min.js | tail -n 10<br><br>
+<br><br>
 
 
 - Busca sourceMappingURL= en la salida.
@@ -663,8 +662,13 @@ Si la segunda devuelve 404, a veces el mapa está con otro nombre o no está exp
 
 Extraer y guardar el source map si está inline (data:application/json;base64,...)<br><br>
 
+
+<br><br>
+
 # descarga el .js primero
 curl -s https://example.com/static/app.min.js -o app.min.js<br><br>
+
+<br><br>
 # extrae la parte base64 y decodifica
 tail -n 10 app.min.js | sed -n 's/.*base64,//p' | tr -d '\r\n' | base64 -d > app.min.js.map<br><br>
 
@@ -688,11 +692,14 @@ Panel izquierdo: generated; derecho: original; abajo: mappings. Pasá el cursor 
 
 Buscar secretos y endpoints manualmente (comandos rápidos)<br><br>
 
-# buscar claves y palabras sensibles en el código original ya mapeado
-rg -n --hidden -S 'apiKey|api_key|apikey|token|secret|passwd|password|clientId|accessKey|aws_access_key|private' path/to/originals/<br><br>
-# si solo tenés app.min.js y app.min.js.map, podés buscar en el map por strings expuestos
-rg -n 'apiKey|token|secret|password|clientId|endpoint|internal' app.min.js app.min.js.map<br><br>
+<br><br>
 
+## buscar claves y palabras sensibles en el código original ya mapeado
+rg -n --hidden -S 'apiKey|api_key|apikey|token|secret|passwd|password|clientId|accessKey|aws_access_key|private' path/to/originals/<br><br>
+<br><br>
+
+## si solo tenés app.min.js y app.min.js.map, podés buscar en el map por strings expuestos
+rg -n 'apiKey|token|secret|password|clientId|endpoint|internal' app.min.js app.min.js.map<br><br>
 
 Si no tenés rg, usá grep -RInE 'apiKey|token|secret|password|clientId|endpoint' .<br><br>
 
@@ -716,10 +723,10 @@ Comentarios TODO, FIXME, credenciales en texto plano.<br><br>
 Uso de eval, new Function, innerHTML, document.write o concatenaciones peligrosas que formen URLs.<br><br>
 
 Cualquier referencia a keys de terceros (Stripe, Firebase, AWS, etc).<br><br>
+<br><br>
 
 
-Extra: <br><br>
-
+## Extra: <br><br>
 
 Localizar referencias al sourcemap:
 
@@ -779,7 +786,12 @@ Identificar plantillas, dinámicas de generación de subdominios o creación de 
 
 ### <picture> <img src = "https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMnI0aTAwanZhZHc2aTFsYzNid294Y3c4cGpzZ214bDh0Zm9sMTdzaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/djj4FGpee1d067eJID/giphy.gif" width = 80px>  </picture> “Palabras claves y Dorks”
 
-#  3
+#  5
+
+**En esta sección encontrarás palabras clave para el análisis de JavaScript, específicamente dorks.**
+
+<br><br>
+
 
 ```yaml
 Keywords (EN)
@@ -896,9 +908,11 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 
 ### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2k3eHk2YXB1bTdld20xZWRsaXduNjdlcmc0dHBseWxlZ2J5MnlpbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/bsvz1MTmt9PIMDi1rc/giphy.gif" width = 80px>  </picture> 40 Informes diferentes
 
-#  4
+#  6
 
 **“En esta sección encontrarás 182 informes reales sobre análisis de .js que leí, estudié y anoté. Podés copiarlos directamente, importarlos en JSON con mis notas o cargarlos masivamente en tu gestor.”**
+<br><br>
+
 
 ## Lista de informes link directo
 ```yam
@@ -1098,7 +1112,7 @@ Utilizar mi herramienta Gestor de Informes para subir informes masivamente y cre
 <br><br>
 
 
-##Lo que aprendí leyendo de esos informes:
+## Lo que aprendí leyendo de esos informes:
 
 • Nada interesante solo  esto: 
 
@@ -4398,7 +4412,7 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 
 ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> Hardening / mitigation
 
-#  5
+#  7
 
 **En esta sección encontraremos cómo mitigar las vulnerabilidades asociadas al análisis de JavaScript.**
 <br><br>
@@ -4451,24 +4465,95 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 
 ### <picture> <img src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExODNlNmwwNG5uZmgweXBnZTRyNDBuOHN0aWMyb2xkc3doaXp5YnBvZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/4CWsgxwX4tGcIr6ztM/giphy.gif" width = 80px>  </picture> “Recursos img entre otros”
 
-#  5
+#  8
 
 **En esta sección encontrarás imágenes, recursos adicionales, herramientas y mucho más, todo relacionado con el análisis de JavaScript.**
+<br><br>
+
+## IMG
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
 
 <br><br>
 
- <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/iconos/blob/main/prompt_interesante_cualquier_IA.jpg"/>
+
+<br><br>
 
 <br><br>
 
 ## Recursos
 
-
+https://www.youtube.com/watch?v=VpDmOjDqmh8
+ — Interesante metodología bastante completa de análisis de JS con sus tools.
+https://www.youtube.com/watch?v=djCNhYMo3eE
+ — Está bueno, habla sobre análisis de JS y análisis de diferentes cosas como React, Angular, etc. También trata algo básico de regex, pero está bien.
+https://www.youtube.com/watch?v=CiIyaZ3x49c
+ — Súper bueno, reglas regex; explica cómo funciona la lógica según la biblioteca, muy interesante.
+https://www.youtube.com/watch?v=AIZh0MDk3lI
+ — Bueno para mirar, en español (audio), cursito.
+https://blogs.jsmon.sh/100-regex-patterns/
+ — Recurso interesante: más de 100 regex para análisis de JS.
+https://www.youtube.com/watch?v=ArwTbZAlZSA
+ — Ocultar source.map.
+https://www.youtube.com/watch?v=FIYkjjFYvoI
+ — Bueno para mirar, explica qué es source.map; interesante compilación sobre TypeScript y los compiladores de Vite, etc.
+https://www.youtube.com/watch?v=SkUcO4ML5U0
+ — Uso de DevTools para análisis completo de source.map, cómo ocultarlo, limitaciones, etc.
+https://www.youtube.com/watch?v=qWDwHRZfbDo
+ — Cómo funciona realmente source.map con Webpack, muy interesante.
+https://www.youtube.com/watch?v=uzRbPp4rC4M
+ — Decodificación de VLQ para source.map, súper recomendado; incluye herramienta web.
+ https://www.youtube.com/watch?v=oVcv3QZiXNM Super recomendado sobre Análisis en profundidad de los mapas de origen - Nicolò Ribaudo | JSHeroes 2024
 
 <br><br>
 
 ## Tools
 
+https://urlquery.net/  mirar enpint itneraSZNte muy buena sitio web:  
+https://obf-io.deobfuscate.io/ para js ofsucado etc: sitio web:               
+https://sokra.github.io/source-map-visualization/ sitio web para anlizar source.map             
+https://regex101.com/ interesante test unitario de reglas regex varia segun lenguaje biblotecas etc super bueno:    
+https://www.youtube.com/watch?v=AIZh0MDk3lI&list=PLFF93FRoUwXF-Lq9Bm55osmcg2dZrythY curso de 10 regex bueno
+https://es.scribd.com/document/775345095/JavaScript-for-Hackers libro super recomendado gratis de JavaScript-for-Hackers de Gareth Heyes
+https://cyscan.io/ sitio web para escaneo rapido con captura scrpyt style etc
+https://github.com/0xacb/recollapse tool regex interesante
+https://sploitus.com/?query=React#exploits intersante sitio web para buscar exploit: 
 
 
 <br>
