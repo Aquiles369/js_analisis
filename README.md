@@ -4521,40 +4521,52 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 ## Recursos
 
 https://www.youtube.com/watch?v=VpDmOjDqmh8
- — Interesante metodología bastante completa de análisis de JS con sus tools.
+ — Interesante metodología bastante completa de análisis de JS con sus tools.<br><br>
 https://www.youtube.com/watch?v=djCNhYMo3eE
- — Está bueno, habla sobre análisis de JS y análisis de diferentes cosas como React, Angular, etc. También trata algo básico de regex, pero está bien.
+ — Está bueno, habla sobre análisis de JS y análisis de diferentes cosas como React, Angular, etc. También trata algo básico de regex, pero está bien.<br><br>
 https://www.youtube.com/watch?v=CiIyaZ3x49c
- — Súper bueno, reglas regex; explica cómo funciona la lógica según la biblioteca, muy interesante.
+ — Súper bueno, reglas regex; explica cómo funciona la lógica según la biblioteca, muy interesante.<br><br>
 https://www.youtube.com/watch?v=AIZh0MDk3lI
- — Bueno para mirar, en español (audio), cursito.
+ — Bueno para mirar, en español (audio), cursito.<br><br>
 https://blogs.jsmon.sh/100-regex-patterns/
- — Recurso interesante: más de 100 regex para análisis de JS.
+ — Recurso interesante: más de 100 regex para análisis de JS.<br><br>
 https://www.youtube.com/watch?v=ArwTbZAlZSA
- — Ocultar source.map.
+ — Ocultar source.map.<br><br>
 https://www.youtube.com/watch?v=FIYkjjFYvoI
- — Bueno para mirar, explica qué es source.map; interesante compilación sobre TypeScript y los compiladores de Vite, etc.
+ — Bueno para mirar, explica qué es source.map; interesante compilación sobre TypeScript y los compiladores de Vite, etc.<br><br>
 https://www.youtube.com/watch?v=SkUcO4ML5U0
- — Uso de DevTools para análisis completo de source.map, cómo ocultarlo, limitaciones, etc.
+ — Uso de DevTools para análisis completo de source.map, cómo ocultarlo, limitaciones, etc.<br><br>
 https://www.youtube.com/watch?v=qWDwHRZfbDo
- — Cómo funciona realmente source.map con Webpack, muy interesante.
+ — Cómo funciona realmente source.map con Webpack, muy interesante.<br><br>
 https://www.youtube.com/watch?v=uzRbPp4rC4M
- — Decodificación de VLQ para source.map, súper recomendado; incluye herramienta web.
+ — Decodificación de VLQ para source.map, súper recomendado; incluye herramienta web.<br><br>
  https://www.youtube.com/watch?v=oVcv3QZiXNM Super recomendado sobre Análisis en profundidad de los mapas de origen - Nicolò Ribaudo | JSHeroes 2024
+
 
 <br><br>
 
 ## Tools
 
-https://urlquery.net/  mirar enpint itneraSZNte muy buena sitio web:  
-https://obf-io.deobfuscate.io/ para js ofsucado etc: sitio web:               
-https://sokra.github.io/source-map-visualization/ sitio web para anlizar source.map             
-https://regex101.com/ interesante test unitario de reglas regex varia segun lenguaje biblotecas etc super bueno:    
-https://www.youtube.com/watch?v=AIZh0MDk3lI&list=PLFF93FRoUwXF-Lq9Bm55osmcg2dZrythY curso de 10 regex bueno
-https://es.scribd.com/document/775345095/JavaScript-for-Hackers libro super recomendado gratis de JavaScript-for-Hackers de Gareth Heyes
-https://cyscan.io/ sitio web para escaneo rapido con captura scrpyt style etc
-https://github.com/0xacb/recollapse tool regex interesante
+https://urlquery.net/  mirar enpint itneraSZNte muy buena sitio web:  <br><br>
+https://obf-io.deobfuscate.io/ para js ofsucado etc: sitio web:               <br><br>
+https://sokra.github.io/source-map-visualization/ sitio web para anlizar source.map   <br><br>          
+https://regex101.com/ interesante test unitario de reglas regex varia segun lenguaje biblotecas etc super bueno:    <br><br>
+https://www.youtube.com/watch?v=AIZh0MDk3lI&list=PLFF93FRoUwXF-Lq9Bm55osmcg2dZrythY curso de 10 regex bueno <br><br>
+https://es.scribd.com/document/775345095/JavaScript-for-Hackers libro super recomendado gratis de JavaScript-for-Hackers de Gareth Heyes<br><br>
+https://cyscan.io/ sitio web para escaneo rapido con captura scrpyt style etc <br><br>
+https://github.com/0xacb/recollapse tool regex interesante <br><br>
 https://sploitus.com/?query=React#exploits intersante sitio web para buscar exploit: 
+
+<br><br>
+
+
+## Las tools que armé son 3:
+
+1- Script de más de 150 reglas regex diferentes.<br><br>
+
+2- Script con más de 70 categorías diferentes para buscar secretos: API keys, tokens, paths, funciones debug y mucho más.<br><br>
+
+3- Configuración de categorías para buscar en jsluice.<br><br>
 
 
 <br>
