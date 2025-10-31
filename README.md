@@ -4700,14 +4700,330 @@ https://sploitus.com/?query=React#exploits
 <br><br>
 
 
-## Las tools que armé son 3:
+## Las tools que armé son 4:
 
 1- Script de más de 150 reglas regex diferentes.<br><br>
+
+
+```yaml
+
+
+API keys / Tokens / Servicios
+
+(?:\s|=|:|"|^)AKC[a-zA-Z0-9]{10,}
+
+(?:\s|=|:|"|^)AP[\dABCDEF][a-zA-Z0-9]{8,}
+
+basic [a-zA-Z0-9_\\-:\\.=]+
+
+bearer [a-zA-Z0-9_\\-\\.=]+
+
+(A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+
+amzn\.mws\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+
+(?i)aws(.{0,20})?(?-i)['\"][0-9a-zA-Z\/+]{40}['\"]
+
+(?:[A-Z2-7]{8})*(?:[A-Z2-7]{2}={6}|[A-Z2-7]{4}={4}|[A-Z2-7]{5}={3}|[A-Z2-7]{7}=)?
+
+(eyJ|YTo|Tzo|PD[89]|aHR0cHM6L|aHR0cDo|rO0)[a-zA-Z0-9+/]+={0,2}
+
+(?<=:\/\/)[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z]+
+
+cloudinary:\/\/[0-9]{15}:[0-9A-Za-z]+@[a-z]+
+
+EAACEdEose0cBA[0-9A-Za-z]+
+
+(?i)(facebook|fb)(.{0,20})?['\"][0-9]{13,17}
+
+(?i)(facebook|fb)(.{0,20})?['\"][0-9a-f]{32}
+
+(?i)github(.{0,20})?(?-i)['\"][0-9a-zA-Z]{35,40}
+
+ghp_[0-9a-zA-Z]{36}
+
+github_pat_[0-9a-zA-Z_]{20,}
+
+gho_[A-Za-z0-9]{36}
+
+ghs_[A-Za-z0-9]{36}
+
+ghu_[A-Za-z0-9]{36}
+
+AIza[0-9A-Za-z\\-_]{35}
+
+[0-9]+-[0-9A-Za-z_]{32}\.apps\.googleusercontent\.com
+
+ya29\\.[0-9A-Za-z\\-_]+
+
+(?i)(google|gcp|youtube|drive|yt)(.{0,20})?['\"][AIza[0-9a-z\\-_]{35}]['\"]
+
+[hH]eroku['\"][0-9a-f]{32}['\"]
+
+\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\b
+
+(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+
+(?:const|let|var)\s+\K(\w+?)(?=[;.=\s])
+
+(?i)linkedin(.{0,20})?(?-i)['\"][0-9a-z]{12}['\"]
+
+(?i)linkedin(.{0,20})?['\"][0-9a-z]{16}['\"]
+
+[0-9a-f]{32}-us[0-9]{1,2}
+
+key-[0-9a-zA-Z]{32}
+
+(?<=mailto:)[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9.-]+
+
+[a-f0-9]{32}
+
+sk_live_[0-9a-z]{32}
+
+xox[baprs]-([0-9a-zA-Z]{10,48})?
+
+https://hooks.slack.com/services/T[a-zA-Z0-9_]{10}/B[a-zA-Z0-9_]{10}/[a-zA-Z0-9_]{24}
+
+(pk|sk|rk)_(test|live)_[A-Za-z0-9]+
+
+sqOatp-[0-9A-Za-z\\-_]{22}
+
+sq0csp-[ 0-9A-Za-z\\-_]{43}
+
+SK[0-9a-fA-F]{32}
+
+(?i)twitter(.{0,20})?['\"][0-9a-z]{18,25}
+
+[tT][wW][iI][tT][tT][eE][rR].{0,30}['\"\\s][0-9a-zA-Z]{35,44}['\"\\s]
+
+(?i)twitter(.{0,20})?['\"][0-9a-z]{35,44}
+
+[sb]\.[a-zA-Z0-9]{24}
+
+(?<=\?|\&)[a-zA-Z0-9_]+(?=\=)
+
+URLs, DB URIs, infra
+
+https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
+
+[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
+
+mongodb(\+srv)?:\/\/[^\s'"]+
+
+postgres(?:ql)?:\/\/[^\s'"]+
+
+mysql:\/\/[^\s'"]+
+
+redis:\/\/[^\s'"]+
+
+elasticsearch:\/\/[^\s'"]+
+
+supabase\.co\/[a-z0-9]{15,}
+
+https:\/\/[a-z0-9-]+\.firebaseio\.com
+
+jdbc:\w+:\/\/[^\s'"]+
+
+[a-z0-9-]+\.rds\.amazonaws\.com
+
+googleapis\.com\/sql\/v1beta4\/projects\/
+
+Servicios, SDKs y otros tokens
+
+(?i)(algolia|application)_?key['"\s:=]+[a-zA-Z0-9]{10,}
+
+firebaseConfig\s*=\s*{[^}]*apiKey\s*:\s*['"][^'"]+['"]
+
+cloudinary:\/\/[0-9]{15}:[a-zA-Z0-9]+@[a-zA-Z]+
+
+https:\/\/[a-zA-Z0-9]+@[a-z]+\.ingest\.sentry\.io\/\d+
+
+netlifyAuthToken\s*=\s*['"][a-z0-9]{40}['"]
+
+[a-f0-9]{40}
+
+(?i)segment(.{0,20})?key['"\s:=]+[a-zA-Z0-9]{10,}
+
+(?i)intercom(.{0,20})?token['"\s:=]+[a-zA-Z0-9-_]{20,}
+
+apiKey['"]?\s*:\s*['"][a-z0-9\-]{32,64}['"]
+
+plaid(.{0,20})?(client)?secret['"\s:=]+[a-z0-9-_]{30,}
+
+(?i)docker(.{0,20})?password['"\s:=]+[^\s'"]{8,}
+
+arn:aws:iam::[0-9]{12}:role\/[A-Za-z0-9_+=,.@\-_/]+
+
+s3:\/\/[a-z0-9\-\.]{3,63}
+
+(?i)secretName:\s*['"]?[a-z0-9\-]+['"]?
+
+(?i)secret\s*:\s*['"][^'"]+['"]
+
+secrets\.[A-Z0-9_]+
+
+encrypted_value:\s*['"][a-zA-Z0-9+/=]{10,}['"]
+
+eyJhbGciOiJSUzI1NiIsImtpZCI6
+
+s\.[a-zA-Z0-9]{8,}
+
+https:\/\/vault\.[a-z0-9\-_\.]+\.com
+
+CI/CD / DevOps
+
+circle-token=[a-z0-9]{40}
+
+(?i)travis(.{0,20})?token['"\s:=]+[a-z0-9]{30,}
+
+Jenkins-Crumb:\s*[a-z0-9]{30,}
+
+[a-z0-9]{52}
+
+ghp_[a-zA-Z0-9]{36}
+
+glpat-[0-9a-zA-Z-_]{20}
+
+bitbucket(.{0,20})?key['"\s:=]+[a-zA-Z0-9]{20,}
+
+bitbucket(.{0,20})?secret['"\s:=]+[a-zA-Z0-9]{20,}
+
+glrt-[a-zA-Z0-9_-]{20}
+
+netlifyAuthToken\s*=\s*['"][a-z0-9]{40}['"] (mantener una sola forma si querés)
+
+SDKs / Telemetría / Analítica
+
+[a-f0-9]{32} (Bugsnag style)
+
+[a-z0-9]{32} (Datadog-like)
+
+[a-z0-9]{30}-[a-z0-9]{10}
+
+NRII-[a-zA-Z0-9]{20,}
+
+(?i)mixpanel(.{0,20})?token['"\s:=]+[a-z0-9]{32}
+
+heapSettings\.appId\s*=\s*['"][a-z0-9]{8,12}['"]
+
+projectId['"]?\s*:\s*['"][a-f0-9]{24}['"]
+
+writeKey['"]?\s*:\s*['"][a-zA-Z0-9]{64}['"]
+
+snyk_token\s*=\s*[a-f0-9\-]{36}
+
+access_token['"]?\s*:\s*['"][a-z0-9]{32}['"]
+
+Juegos / Plataformas / Bots
+
+(?i)twitch(.{0,20})?key['"\s:=]+[a-zA-Z0-9]{20,}
+
+[MN][A-Za-z\d]{23}\.[\w-]{6}\.[\w-]{27}
+
+https:\/\/discord(?:app)?\.com\/api\/webhooks\/[0-9]+\/[a-zA-Z0-9_-]+
+
+(?i)steam(.{0,20})?key['"\s:=]+[a-zA-Z0-9]{32}
+
+RGAPI-[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}
+
+sl\.[A-Za-z0-9_-]{20,100}
+
+shpat_[0-9a-fA-F]{32}
+
+URLs/Endpoints internos y fuga
+
+\b(10\.\d{1,3}|\b192\.168|\b172\.(1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}
+
+localhost:[0-9]{2,5}
+
+(dev|staging|test)\.[a-z0-9.-]+\.(com|net|io)
+
+https?:\/\/[a-z0-9.-]+\.internal\.[a-z]{2,}
+
+https:\/\/preprod\.[a-z0-9-]+\.[a-z]{2,}
+
+Privadas / PEM / PGP / blocks
+
+-----BEGIN (RSA|DSA|EC|OPENSSH)? PRIVATE KEY-----
+
+-----BEGIN CERTIFICATE-----
+
+-----BEGIN PGP PRIVATE KEY BLOCK-----
+
+['\"][A-Za-z0-9+\/]{40,}={0,2}['\"]
+
+(?i)(apikey|api_key|secret|token)['"\s:=]+[a-zA-Z0-9\-._]{8,}
+
+(?i)authorization:\s*Bearer\s+[a-zA-Z0-9\-._~+/]+=*
+
+(?i)(sessionid|session_id)['"\s:=]+[a-zA-Z0-9]{10,}
+
+(?i)set-cookie:\s*[a-zA-Z0-9_-]+=
+
+(?i)csrf(token)?['"\s:=]+[a-zA-Z0-9-_]{8,}
+
+localStorage\.setItem\(['"]token['"],\s*['"]eyJ[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+['"]\)
+
+Generales útiles / alta entropía
+
+['\"][A-Za-z0-9+\/]{40,}={0,2}['\"]
+
+(?i)(apikey|api_key|secret|token)['"\s:=]+[a-zA-Z0-9\-_.]{8,}
+
+(?i)authorization:\s*Bearer\s+[a-zA-Z0-9\-._~+/]+=*
+
+Añadidas: GitHub variantes y env vars explícitas
+
+aws_session_token['"\s:=]+[A-Za-z0-9\/+=]{16,}
+
+(?i)AWS_ACCESS_KEY_ID['"\s:=]+\w+
+
+(?i)AWS_SECRET_ACCESS_KEY['"\s:=]+[A-Za-z0-9\/+]{40}
+
+Añadidas: GitHub nuevas (solicitadas)
+
+gho_[A-Za-z0-9]{36}
+
+ghs_[A-Za-z0-9]{36}
+
+ghu_[A-Za-z0-9]{36}
+
+JSON / YAML multiline (tokens/keys)
+
+(?s)(?:"(?:token|key|secret|api_key|client_secret)"\s*:\s*")[^"]{6,}(")
+
+(?s)(?:'(?:(?:token|key|secret|api_key|client_secret)'\s*:\s*')[^']{6,}('))
+
+(?m)^\s*(?:token|key|secret|api_key|client_secret)\s*:\s*(.+)$ (YAML-style)
+
+(?s)"(?:authorization|Authorization|access_token)"\s*:\s*"[A-Za-z0-9\-\._~\+\/=]{8,}"
+
+Encodings raros / Base32 / Base64 / alta entropía
+
+(?:[A-Z2-7]{8})*(?:[A-Z2-7]{2}={6}|[A-Z2-7]{4}={4}|[A-Z2-7]{5}={3}|[A-Z2-7]{7}=)?
+
+(eyJ|YTo|Tzo|PD[89]|aHR0cHM6L|aHR0cDo|rO0)[a-zA-Z0-9+/]+={0,2}
+
+['\"][A-Za-z0-9+\/]{40,}={0,2}['\"]
+
+Headers / Patterns / Logs
+
+(?mi)^[A-Za-z0-9-]+:\s*.+$
+
+(?mi)^set-cookie:\s*[^\r\n]+
+
+(?mi)^(?:ERROR|WARN|INFO|DEBUG|TRACE):\s+.*$
+
+(?i)\b(?:TODO|FIXME|DEBUG|HINT|NOTE):?.*$
+
+
+```
 
 2- Script con más de 70 categorías diferentes para buscar secretos: API keys, tokens, paths, funciones debug y mucho más.<br><br>
 
 3- Configuración de categorías para buscar en jsluice.<br><br>
 
+4- Pasarle todo este repositorio completo, por partes, a tu IA preferida para que aprenda de él: crear una nueva conversación y enviarle el contenido por secciones (excepto las 3 tools ya creadas). Usar la IA solo como guía para el análisis de código y aprendizaje, no para ejecutar las herramientas por separado subir en formato PDF es una segunda opción por partes.
 
 <br>
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
