@@ -620,10 +620,10 @@ Céntrate en entender cómo funciona el código JavaScript para mapear la infrae
 
 <br><br>
 
-**Recordatorio: todo lo anterior debe aplicarse tanto a archivos estáticos como dinámicos, y en contextos sin autenticación y post-autenticación uedes usar Burp Suite para capturar todo el tráfico mientras navegas por el sitio.
-Limita el scope al objetivo para que en la historia de Burp solo aparezcan las requests del target. Cuando captures archivos dinámicos, configura correctamente las opciones de la extensión de captura para incluir los tipos de recurso que te interesan.<br><br>
-• Revisá archivos estáticos (HTML, JS, CSS, assets) y dinámicos (endpoints, plantillas, APIs).
-• Probá escenarios sin sesión y con sesión (usuarios normales y privilegiados).
+**Recordatorio: todo lo anterior debe aplicarse tanto a archivos estáticos como dinámicos, y en contextos sin autenticación y post-autenticación puedes usar Burp Suite para capturar todo el tráfico mientras navegas por el sitio.
+Limita el scope al objetivo para que en el historial de Burp solo aparezcan las requests del target. Cuando captures archivos dinámicos, configura correctamente las opciones de la extensión de captura para incluir los tipos de recurso que te interesan.<br><br>
+• Revisá archivos estáticos (HTML, JS, CSS, assets) y dinámicos (endpoints, plantillas, APIs).<br><br>
+• Probá escenarios sin sesión y con sesión (usuarios normales y privilegiados).<br><br>
 • Documentá diferencias de comportamiento y vectores específicos por contexto.**
 
 
@@ -908,7 +908,7 @@ after:2024-01-01 "javascript exposure" OR "api key leak"
 <picture> <img src="https://user-images.githubusercontent.com/74038190/212284115-f47cd8ff-2ffb-4b04-b5bf-4d1c14c0247f.gif" width ="1050" > </picture>
 <br>
 
-### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2NxY2JzdWxmeHVqeWtxenp5dTIybWxlMWZ6dnRmcTZsemNwYW4zYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/0Q6VlwzeMhuL7xFCKG/giphy.gif" width = 80px>  </picture> 40 Informes diferentes
+### <picture> <img src = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExb2NxY2JzdWxmeHVqeWtxenp5dTIybWxlMWZ6dnRmcTZsemNwYW4zYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/0Q6VlwzeMhuL7xFCKG/giphy.gif" width = 80px>  </picture> 182 Informes diferentes
 
 #  6
 
