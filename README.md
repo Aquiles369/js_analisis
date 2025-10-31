@@ -5317,6 +5317,119 @@ analis de cada archivos para ver funciones ocultas
 
 3- Configuración de categorías para buscar en jsluice.<br><br>
 
+**Los nombres de nodo usan la convención directa tipo tree-sitter (ajustalos si tu gramática tiene otros labels).**
+
+<br><br>
+
+
+```yaml
+
+¿Qué significa “ajustar con su gramática”?
+
+Cuando usás jsluice, semgrep, o cualquier herramienta basada en tree-sitter, las consultas ((function_declaration ...), (call_expression ...), etc.) se apoyan en nodos del árbol sintáctico (AST).
+Pero no todas las gramáticas usan exactamente los mismos nombres de nodo.
+
+Ejemplo:
+
+En tree-sitter-javascript, una declaración de función se llama
+function_declaration.
+
+En tree-sitter-typescript, el mismo nodo se llama igual,
+pero los parámetros internos (parameter) pueden tener un wrapper distinto (required_parameter).
+
+En tree-sitter-html, un nodo de script se llama script_element, no elemento_de_script.
+
+Entonces, “ajustar con su gramática” significa verificar qué gramática (.so o .wasm) está cargando jsluice y, si los nodos difieren, adaptar tus queries.
+
+2. ¿Cómo saber qué gramática estás usando?
+
+Hay tres formas simples:
+
+Comando jsluice directo:
+
+jsluice info
+
+
+o
+
+jsluice grammar
+
+
+(te devuelve qué parser/grammar está activo: tree-sitter-javascript, tree-sitter-typescript, etc.)
+
+Por la extensión del archivo:
+
+.js → usa tree-sitter-javascript
+
+.ts → tree-sitter-typescript
+
+.tsx → tree-sitter-tsx
+
+.html / .htm → tree-sitter-html
+
+Inspeccionando un árbol sintáctico manualmente:
+
+jsluice parse archivo.js
+
+
+Verás los nombres reales de los nodos.
+Ejemplo:
+
+(program
+  (function_declaration
+    name: (identifier)
+    parameters: (formal_parameters (identifier))
+    body: (statement_block)))
+
+
+Ahí ves si tus queries usan nombres correctos o no.
+
+3. ¿Tree-sitter es la más general?
+
+Sí.
+Tree-sitter es el parser base más usado del mundo para análisis estático moderno.
+La usan VS Code, GitHub, Semgrep, SonarQube, y herramientas de seguridad como jsluice, CodeQL y Deno lint.
+
+Cobertura de lenguajes → ~95 % del ecosistema JS/TS/HTML moderno.
+
+Compatibilidad sintáctica entre gramáticas JS/TS → ~85 % idéntica (solo difieren algunos nodos en types, decorators, o jsx/tsx).
+
+Así que, en porcentaje:
+
+JS / TS / TSX comparten ≈ 85-90 % de los nodos.
+
+HTML comparte ≈ 60-70 % (por estructura DOM distinta).
+
+4. ¿Y el tema de los nodos distintos (HTML/TSX/TS)?
+
+HTML:
+
+<script> → script_element
+
+<link> → element
+
+<attribute> y attribute_name/value en lugar de pair key/value.
+
+TSX:
+
+Combina nodos JS + JSX: jsx_element, jsx_attribute, jsx_text.
+
+TS:
+
+Igual a JS, pero agrega type_annotation, interface_declaration, decorator.
+
+Por eso, si querés portabilidad, mantené dos juegos de queries:
+
+Uno base JS (tree-sitter-javascript)
+
+Uno extendido (añadiendo nodos jsx_ y html_)
+
+```
+
+<br><br>
+
+ 
+
 ```yaml
 
 10 ejemplos prácticos de consultas para ' jsluice ' para extraer datos interesantes de archivos JavaScript:
@@ -5350,6 +5463,241 @@ jsluice query -q "(nueva_expresión llamada: (nombre del identificador: 'XMLHttp
 
 Identificar todos los scripts en línea en un archivo HTML
 consulta jsluice -q "(elemento_de_script)" su_archivo.html
+
+
+
+
+
+
+Secrets
+consulta jsluice -q "(literal ((string) @secret) (#match? @secret \"[A-Za-z0-9+/=]{32,}\"))" tu_archivo.js
+
+config
+consulta jsluice -q "(object (pair key: (property_identifier) @k value: (object) @config) (#eq? @k \"config\"))" tu_archivo.js
+
+env
+consulta jsluice -q "(member_expression object: (identifier) @proc prop: (property_identifier) @envp) (#eq? @proc \"process\") (#match? @envp \"env\")" tu_archivo.js
+
+Rutas ocultas
+consulta jsluice -q "(string) @ruta (#match? @ruta \"\\/(admin|hidden|secret|internal|private|_next)\\b\")" tu_archivo.js
+
+routers
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @router prop: (property_identifier) @method) . ) (#match? @method \"get|post|use|route\")" tu_archivo.js
+
+endpoints
+consulta jsluice -q "(call_expression function: (identifier) @fn (arguments (string) @url)) (#match? @url \"https?:\\/\\/|\\/\")" tu_archivo.js
+
+Fetch
+consulta jsluice -q "(call_expression function: (identifier) @fetch_name) (#eq? @fetch_name \"fetch\")" tu_archivo.js
+
+Axios
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @axios prop: (property_identifier) @method)) (#eq? @axios \"axios\")" tu_archivo.js
+
+HTTP clients
+consulta jsluice -q "(new_expression constructor: (identifier) @client) (#match? @client \"Axios|HttpClient|Got|SuperAgent\")" tu_archivo.js
+
+Tokens
+consulta jsluice -q "(string) @tok (#match? @tok \"(eyJ|ghp_|AKIA|AIza)[A-Za-z0-9_\\-\\.=]{10,}\")" tu_archivo.js
+
+refresh flow
+consulta jsluice -q "(assign_expression left: (member_expression (identifier) @obj prop: (property_identifier) @prop) right: (call_expression) @refresh) (#match? @prop \"refresh_token|setRefresh\")" tu_archivo.js
+
+auth
+consulta jsluice -q "(variable_declarator name: (identifier) @a value: (object (pair key: (property_identifier) @k))) (#match? @k \"auth|authorization|credentials\")" tu_archivo.js
+
+IDOR clues
+consulta jsluice -q "(string) @idor (#match? @idor \"\\b(id|user_id|account_id|profile)\\b\")" tu_archivo.js
+
+parámetros
+consulta jsluice -q "(function_declaration parameters: (formal_parameters (identifier) @param))" tu_archivo.js
+
+parámetros personalizados
+consulta jsluice -q "(member_expression object: (identifier) @req prop: (property_identifier) @query) (#eq? @req \"req\")" tu_archivo.js
+
+end-point
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"endpoint|url|route\")" tu_archivo.js
+
+end-point, personalizado
+consulta jsluice -q "(object (pair key: (property_identifier) @k value: (template_string) @tpl)) (#match? @k \"endpoint|customEndpoint\")" tu_archivo.js
+
+Feature flags
+consulta jsluice -q "(variable_declarator name: (identifier) @flag init: (boolean) @val) (#match? @flag \"enable|feature|flag|toggle|is.*Enabled\")" tu_archivo.js
+
+toggles
+consulta jsluice -q "(assignment_expression left: (member_expression object: (identifier) @cfg prop: (property_identifier) @name) right: (boolean) @v) (#match? @name \"toggle|enabled|disabled|beta\")" tu_archivo.js
+
+experiments
+consulta jsluice -q "(string) @exp (#match? @exp \"experiment|variant|bucket|test\")" tu_archivo.js
+
+Redirects
+consulta jsluice -q "(assignment_expression left: (member_expression (identifier) @win prop: (property_identifier) @loc) right: (string) @u) (#eq? @win \"window\") (#eq? @loc \"location\")" tu_archivo.js
+
+return URLs
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @res prop: (property_identifier) @redir) arguments: (string) @url) (#match? @redir \"redirect|location\")" tu_archivo.js
+
+open redirect clues
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @res prop: (property_identifier) @redir) arguments: (member_expression object: (identifier) @req prop: (property_identifier) @q)) (#match? @q \"next|redirect|url|return_to\")" tu_archivo.js
+
+Service workers
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @self prop: (property_identifier) @add) arguments: (string) @evt) (#eq? @self \"self\") (#eq? @add \"addEventListener\") (#match? @evt \"fetch|install|activate\")" tu_archivo.js
+
+PWA
+consulta jsluice -q "(object (pair key: (property_identifier) @k value: (string) @v) ) (#match? @k \"manifest|serviceWorker|start_url|scope\")" tu_archivo.js
+
+offline
+consulta jsluice -q "(string) @s (#match? @s \"offline|cache|fallback|offline.html\")" tu_archivo.js
+
+CSRF
+consulta jsluice -q "(member_expression object: (identifier) @req prop: (property_identifier) @body) (#match? @body \"csrf|csrfToken|_csrf\")" tu_archivo.js
+
+anti-forgery
+consulta jsluice -q "(call_expression function: (identifier) @verify) (#match? @verify \"verifyCsrf|checkCsrf|csrfProtection\")" tu_archivo.js
+
+Comentarios
+consulta jsluice -q "(comment) @c" tu_archivo.js
+
+TODO
+consulta jsluice -q "(comment) @c (#match? @c \"TODO|FIXME|BUG\")" tu_archivo.js
+
+DEBUG
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @con prop: (property_identifier) @log) arguments: (string) @msg) (#eq? @con \"console\") (#match? @log \"log|debug|error|warn\")" tu_archivo.js
+
+hints
+consulta jsluice -q "(comment) @c (#match? @c \"hint|note|consider|remember\")" tu_archivo.js
+
+DOM sinks (XSS)
+consulta jsluice -q "(assignment_expression left: (member_expression object: (identifier) @el prop: (property_identifier) @prop) right: (string) @s) (#match? @prop \"innerHTML|outerHTML|innerText|outerText|innerHTML\")" tu_archivo.js
+
+.css.map
+consulta jsluice -q "(string) @s (#match? @s \"\\.css\\.map|sourceMappingURL\")" tu_archivo.js
+
+source maps
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @v \"sourceMappingURL|\\.map\")" tu_archivo.js
+
+sourceMappingURL
+consulta jsluice -q "(string) @s (#match? @s \"sourceMappingURL\")" tu_archivo.js
+
+sourcemaps
+consulta jsluice -q "(call_expression function: (identifier) @fn) (#match? @fn \"sourceMap|sourceMapping\")" tu_archivo.js
+
+Mensajes de error (server)
+consulta jsluice -q "(throw_statement (new_expression constructor: (identifier) @err (arguments (string) @msg))) (#match? @err \"Error|HttpError|BadRequest\")" tu_archivo.js
+
+Mensajes de error (client)
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @con prop: (property_identifier) @m) arguments: (string) @msg) (#eq? @con \"console\") (#match? @m \"error|warn|info\")" tu_archivo.js
+
+Variables
+consulta jsluice -q "(variable_declarator name: (identifier) @v)" tu_archivo.js
+
+regex
+consulta jsluice -q "(new_expression constructor: (identifier) @rx (arguments (string) @pat)) (#eq? @rx \"RegExp\")" tu_archivo.js
+
+nombres de constantes comunes
+consulta jsluice -q "(variable_declarator name: (identifier) @n) (#match? @n \"(API|API_URL|BASE_URL|TOKEN|SECRET|KEY|CONFIG)\")" tu_archivo.js
+
+Formularios que previenen submit (oninput)
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @el prop: (property_identifier) @ad) arguments: (string) @evt) (#eq? @ad \"addEventListener\") (#match? @evt \"input|oninput\")" tu_archivo.js
+
+Formularios que previenen submit (onsubmit handlers)
+consulta jsluice -q "(call_expression function: (member_expression object: (identifier) @el prop: (property_identifier) @ad) arguments: (string) @evt (arrow_function) @fn) (#match? @evt \"submit\")" tu_archivo.js
+
+formularios ocultos
+consulta jsluice -q "(html_element name: (identifier) @tag (attribute (attribute_name (identifier) @attr) (attribute_value (string) @val))) (#eq? @tag \"form\") (#match? @val \"display:\\s*none|hidden|type=['\\\"]hidden['\\\"])\" )" tu_archivo.html
+
+Métodos HTTP
+consulta jsluice -q "(string) @mth (#match? @mth \"\\b(GET|POST|PUT|DELETE|PATCH|OPTIONS|HEAD|CONNECT|TRACE)\\b\")" tu_archivo.js
+
+tokens
+consulta jsluice -q "(string) @t (#match? @t \"(Bearer|Basic|ghp_|gho_|ghs_|ghu_|AKIA|AIza|eyJ)[A-Za-z0-9_\\-\\.=]{10,}\")" tu_archivo.js
+
+URLs (detectar patterns)
+consulta jsluice -q "(string) @u (#match? @u \"https?:\\/\\/|\\/api\\/|\\/internal\\/|\\.(example|local|svc)\\b\")" tu_archivo.js
+
+Bundlers
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"devtool|mode|target\")" webpack.config.js
+
+build
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"build|bundle|output\")" package.json
+
+package.json scripts
+consulta jsluice -q "(property key: (string) @k value: (object) @scripts) (#match? @k \"\\\"scripts\\\"\")" package.json
+
+devtool
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#eq? @k \"devtool\")" webpack.config.js
+
+CI pipelines
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"circleci|travis|github|gitlab|pipeline|jenkins\")" .github/**
+
+deploy commands
+consulta jsluice -q "(object (pair key: (property_identifier) @k value: (string) @v)) (#match? @k \"deploy|release|publish\")" package.json
+
+CDNs
+consulta jsluice -q "(string) @cdn (#match? @cdn \"cdn\\.jsdelivr|cdnjs|unpkg|cdn\\.azure|cloudfront|akamai\")" tu_archivo.js
+
+hosts
+consulta jsluice -q "(string) @h (#match? @h \"[a-z0-9-]+\\.(com|internal|svc|local|example)\")" tu_archivo.js
+
+llamadas HTTP
+consulta jsluice -q "(call_expression function: (identifier) @c) (#match? @c \"fetch|axios|get|post|request|superagent|got\")" tu_archivo.js
+
+URL leaks
+consulta jsluice -q "(string) @u (#match? @u \"\\/\\.env|\\/config|\\/credentials|\\/secrets\")" tu_archivo.js
+
+internal endpoints
+consulta jsluice -q "(string) @ie (#match? @ie \"internal|_internal|private|admin|svc|backend\")" tu_archivo.js
+
+Credentials & Passwords
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"password|passwd|secret|credential|key|token\")" tu_archivo.js
+
+OAuth & JWT
+consulta jsluice -q "(string) @jwt (#match? @jwt \"^eyJ[A-Za-z0-9\\-_=]+\\.[A-Za-z0-9\\-_=]+\\.[A-Za-z0-9\\-_=]+$\")" tu_archivo.js
+
+Database URLs
+consulta jsluice -q "(string) @db (#match? @db \"^(mongodb|postgres|mysql|redis|jdbc):\\\\/\\\\/\")" tu_archivo.js
+
+Service keys
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"apiKey|serviceKey|accessKey|secretKey\")" tu_archivo.js
+
+DevOps secrets (agrupado)
+consulta jsluice -q "(member_expression object: (identifier) @env prop: (property_identifier) @s) (#match? @env \"process|env|secrets|Vault\")" tu_archivo.js
+
+CD/CI task names
+consulta jsluice -q "(string) @task (#match? @task \"deploy|build|test|release|publish|ci|pipeline\")" tu_archivo.js
+
+Encodings raros en keys (base64 + prefix)
+consulta jsluice -q "(string) @enc (#match? @enc \"(^[A-Za-z0-9+/]{20,}={0,2}$|^base64:|^b64:\\/\\/)\" )" tu_archivo.js
+
+Miscellaneous
+consulta jsluice -q "(identifier) @id" tu_archivo.js
+
+headers
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"Authorization|Content-Type|X-Forwarded-For|Set-Cookie|Cookie\")" tu_archivo.js
+
+patterns
+consulta jsluice -q "(string) @p (#match? @p \"TODO|FIXME|HACK|DEBUG|NOTE\")" tu_archivo.js
+
+patterns de logs
+consulta jsluice -q "(string) @l (#match? @l \"ERROR|WARN|INFO|DEBUG|TRACE|Request|Response\")" tu_archivo.js
+
+SAML/SOAP
+consulta jsluice -q "(call_expression function: (identifier) @soap) (#match? @soap \"soap|wsdl|SAML|saml2|Assertion\")" tu_archivo.js
+
+Custom (personalizable por framework)
+consulta jsluice -q "(call_expression function: (identifier) @fn) (#match? @fn \"useRouter|createApp|ngOnInit|mount|bootstrap\")" tu_archivo.js
+
+Prototype pollution / parametros
+consulta jsluice -q "(assignment_expression left: (member_expression object: (identifier) @obj prop: (identifier) @prop) right: (identifier) @val) (#match? @prop \"__proto__|prototype|constructor\")" tu_archivo.js
+
+Inyeccion plantilla
+consulta jsluice -q "(template_string) @tpl (#match? @tpl \"\\{\\{|%|<%|\\$\\{\")" tu_archivo.js
+
+Cors
+consulta jsluice -q "(pair key: (property_identifier) @k value: (string) @v) (#match? @k \"Access-Control-Allow-Origin|CORS|allowedOrigins\")" tu_archivo.js
+
+analisis de cada archivo para ver funciones ocultas
+consulta jsluice -q "(function_declaration name: (identifier) @fn body: (statement_block) @body) (#match? @fn \".*\")" tu_archivo.js
+
+
 
 
 ```
