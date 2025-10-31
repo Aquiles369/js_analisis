@@ -4473,25 +4473,6 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 ## IMG
 
 
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251022-235403.png"/>
-
-<br><br>
-
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-005230.png"/>
-
-
-<br><br>
-
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-075353.png"/>
-
-<br><br>
-
-<br><br>
-
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-082626.png"/>
-
-<br><br>
-
 <br><br>
 
 <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-092744.png"/>
@@ -4507,15 +4488,6 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 <br><br>
 
 <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-134719.png"/>
-
-<br><br>
-
-<br><br>
-
-<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251026-141930.png"/>
-
-<br><br>
-
 
 
 <br><br>
@@ -4652,6 +4624,26 @@ Este artículo te ayudará a profundizar en el tema de la contaminación de prot
 <br><br>
 
 <img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251028-112615.png"/>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251022-235403.png"/>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-005230.png"/>
+
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-075353.png"/>
+
+<br><br>
+
+<br><br>
+
+<img  height="420rem" alt="GIF" src="https://github.com/Aquiles369/js_analisis/blob/main/assets/img/swappy-20251023-082626.png"/>
 
 
 
