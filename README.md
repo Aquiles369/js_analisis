@@ -5317,6 +5317,46 @@ analis de cada archivos para ver funciones ocultas
 
 3- Configuración de categorías para buscar en jsluice.<br><br>
 
+```yaml
+
+10 ejemplos prácticos de consultas para ' jsluice ' para extraer datos interesantes de archivos JavaScript:
+
+Extraiga todos los nombres de funciones
+consulta jsluice -q "(nombre de declaración de función: (identificador) @nombre_de_función)" su_archivo.js
+
+Encuentra todas las variables declaradas
+consulta jsluice -q "(declarador_de_variable id: (identificador) @variable)" su_archivo.js
+
+Identifica todas las cadenas utilizadas
+consulta jsluice -q "(cadena) @string_value" su_archivo.js
+
+Localice todas las llamadas API
+consulta jsluice -q "(función call_expression: (member_expression) @api_call)" your_file.js
+
+Detectar el uso de 'eval'
+consulta jsluice -q "(función call_expression: (nombre del identificador: 'eval'))" your_file.js
+
+Encuentra todas las asignaciones a 'window.location'
+consulta jsluice -q "(expresión_asignación izquierda: (expresión_miembro objeto: (nombre_identificador: 'ventana') propiedad: (nombre_identificador_propiedad: 'ubicación')))" your_file.js
+
+Extraer todos los detectores de eventos
+consulta jsluice -q "(función call_expression: (propiedad member_expression: (nombre property_identifier: 'addEventListener'))) @event_listener" your_file.js
+
+Encuentra el uso de localStorage
+consulta jsluice -q "(objeto member_expression: (nombre del identificador: 'localStorage'))" your_file.js
+
+Descubra todas las XMLHttpRequests
+jsluice query -q "(nueva_expresión llamada: (nombre del identificador: 'XMLHttpRequest'))" your_file.js
+
+Identificar todos los scripts en línea en un archivo HTML
+consulta jsluice -q "(elemento_de_script)" su_archivo.html
+
+
+```
+
+<br><br>
+
+
 4- Pasarle todo este repositorio completo, por partes, a tu IA preferida para que aprenda de él: crear una nueva conversación y enviarle el contenido por secciones (excepto las 3 tools ya creadas). Usar la IA solo como guía para el análisis de código y aprendizaje, no para ejecutar las herramientas por separado subir en formato PDF es una segunda opción por partes.
 
 <br>
