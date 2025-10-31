@@ -4678,15 +4678,24 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
 
 ## Tools
 
-https://urlquery.net/  mirar enpint itneraSZNte muy buena sitio web:  <br><br>
-https://obf-io.deobfuscate.io/ para js ofsucado etc: sitio web:               <br><br>
-https://sokra.github.io/source-map-visualization/ sitio web para anlizar source.map   <br><br>          
-https://regex101.com/ interesante test unitario de reglas regex varia segun lenguaje biblotecas etc super bueno:    <br><br>
-https://www.youtube.com/watch?v=AIZh0MDk3lI&list=PLFF93FRoUwXF-Lq9Bm55osmcg2dZrythY curso de 10 regex bueno <br><br>
-https://es.scribd.com/document/775345095/JavaScript-for-Hackers libro super recomendado gratis de JavaScript-for-Hackers de Gareth Heyes<br><br>
-https://cyscan.io/ sitio web para escaneo rapido con captura scrpyt style etc <br><br>
-https://github.com/0xacb/recollapse tool regex interesante <br><br>
-https://sploitus.com/?query=React#exploits intersante sitio web para buscar exploit: 
+https://urlquery.net/
+ — Mirar endpoints interesantes, muy buen sitio web.<br><br>
+https://obf-io.deobfuscate.io/
+ — Para JS ofuscado, excelente sitio web.<br><br>
+https://sokra.github.io/source-map-visualization/
+ — Sitio web para analizar archivos source.map.<br><br>
+https://regex101.com/
+ — Interesante para probar reglas regex, permite test unitarios y varía según lenguaje o biblioteca. Súper útil.<br><br>
+https://www.youtube.com/watch?v=AIZh0MDk3lI&list=PLFF93FRoUwXF-Lq9Bm55osmcg2dZrythY
+ — Curso de 10 lecciones sobre regex, muy bueno.<br><br>
+https://es.scribd.com/document/775345095/JavaScript-for-Hackers
+ — Libro JavaScript for Hackers de Gareth Heyes, altamente recomendado (gratuito).<br><br>
+https://cyscan.io/
+ — Sitio web para escaneo rápido con captura de scripts, estilos, etc.<br><br>
+https://github.com/0xacb/recollapse
+ — Tool regex muy interesante.<br><br>
+https://sploitus.com/?query=React#exploits
+ — Interesante sitio web para buscar exploits relacionados con React.<br><br>
 
 <br><br>
 
