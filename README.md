@@ -4805,6 +4805,8 @@ SK[0-9a-fA-F]{32}
 
 
 
+
+
 URLs, DB URIs, infra
 
 https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
@@ -4830,6 +4832,11 @@ jdbc:\w+:\/\/[^\s'"]+
 [a-z0-9-]+\.rds\.amazonaws\.com
 
 googleapis\.com\/sql\/v1beta4\/projects\/
+
+
+
+
+
 
 Servicios, SDKs y otros tokens
 
@@ -4872,6 +4879,8 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6
 s\.[a-zA-Z0-9]{8,}
 
 https:\/\/vault\.[a-z0-9\-_\.]+\.com
+
+
 
 
 
@@ -4925,6 +4934,8 @@ access_token['"]?\s*:\s*['"][a-z0-9]{32}['"]
 
 
 
+
+
 Juegos / Plataformas / Bots
 
 (?i)twitch(.{0,20})?key['"\s:=]+[a-zA-Z0-9]{20,}
@@ -4955,6 +4966,7 @@ localhost:[0-9]{2,5}
 https?:\/\/[a-z0-9.-]+\.internal\.[a-z]{2,}
 
 https:\/\/preprod\.[a-z0-9-]+\.[a-z]{2,}
+
 
 
 
@@ -4998,6 +5010,8 @@ Generales útiles / alta entropía
 
 
 
+
+
 Añadidas: GitHub variantes y env vars explícitas
 
 aws_session_token['"\s:=]+[A-Za-z0-9\/+=]{16,}
@@ -5032,6 +5046,8 @@ JSON / YAML multiline (tokens/keys)
 
 
 
+
+
 Encodings raros / Base32 / Base64 / alta entropía
 
 (?:[A-Z2-7]{8})*(?:[A-Z2-7]{2}={6}|[A-Z2-7]{4}={4}|[A-Z2-7]{5}={3}|[A-Z2-7]{7}=)?
@@ -5039,6 +5055,8 @@ Encodings raros / Base32 / Base64 / alta entropía
 (eyJ|YTo|Tzo|PD[89]|aHR0cHM6L|aHR0cDo|rO0)[a-zA-Z0-9+/]+={0,2}
 
 ['\"][A-Za-z0-9+\/]{40,}={0,2}['\"]
+
+
 
 
 
@@ -5053,6 +5071,83 @@ Headers / Patterns / Logs
 (?mi)^(?:ERROR|WARN|INFO|DEBUG|TRACE):\s+.*$
 
 (?i)\b(?:TODO|FIXME|DEBUG|HINT|NOTE):?.*$
+
+
+
+
+
+
+HTTP Methods (Request/Response Detection & Log Analysis)
+(?i)\b(?:GET|POST|PUT|DELETE|HEAD|OPTIONS|PATCH|CONNECT|TRACE|PROPFIND|PROPPATCH|MKCOL|COPY|MOVE|LOCK|UNLOCK|SEARCH|MERGE|PURGE|LINK|UNLINK|SUBSCRIBE|NOTIFY|REPORT|MKACTIVITY|CHECKOUT|CHECKIN|ACL|BIND|REBIND|UNBIND|MKCALENDAR|ORDERPATCH|PRI|VIEW|DESCRIBE|PLAY|ANNOUNCE|RECORD)\b
+
+
+
+Detección de request-line (logs / proxies / archivos de captura):
+(?mi)^(?:GET|POST|PUT|DELETE|HEAD|OPTIONS|PATCH|CONNECT|TRACE|PROPFIND|PROPPATCH|MKCOL|COPY|MOVE|LOCK|UNLOCK|SEARCH|MERGE|PURGE|LINK|UNLINK|SUBSCRIBE|NOTIFY|REPORT|MKACTIVITY|CHECKOUT|CHECKIN|ACL|BIND|REBIND|UNBIND|MKCALENDAR|ORDERPATCH|PRI|VIEW|DESCRIBE|PLAY|ANNOUNCE|RECORD)\s+\/\S*\s+HTTP\/[0-9.]+
+
+
+
+
+Detección de método en líneas de log (varios formatos):
+(?mi)^\s*(?:\[?\d{4}-\d{2}-\d{2}|\[?\d{2}:\d{2}:\d{2})?.*?\b(?:GET|POST|PUT|DELETE|HEAD|OPTIONS|PATCH|CONNECT|TRACE)\b.*$
+
+
+
+Status line (HTTP version + código):
+
+(?mi)^HTTP\/[0-9.]+\s+(1\d{2}|2\d{2}|3\d{2}|4\d{2}|5\d{2})\b
+
+
+
+
+Código de estado aislado (detección simple en logs/texto):
+
+\b(?:1\d{2}|2\d{2}|3\d{2}|4\d{2}|5\d{2})\b
+
+
+
+
+Errores 4xx / 5xx (foco en fallos):
+
+\b(?:4\d{2}|5\d{2})\b
+
+
+
+
+
+Encabezados comunes (captura por nombre de header — útil en parsers y logs):
+
+(?mi)^(Content-Type|User-Agent|Authorization|Host|Origin|Referer|X-Forwarded-For|X-Real-IP|Set-Cookie|Cookie|Accept|Accept-Encoding|Accept-Language|Cache-Control|Connection|Content-Length|Transfer-Encoding|Upgrade-Insecure-Requests):\s*.+$
+
+
+
+
+Authorization header (dentro de tráfico / logs — captura esquema y valor):
+
+(?mi)^Authorization:\s*(Bearer|Basic|Digest|Negotiate)\s+(.+)$
+
+
+
+
+User-Agent (detección de UA no vacío):
+
+(?mi)^User-Agent:\s*.+$
+
+
+
+
+IP forwarded / client IP (X-Forwarded-For / X-Real-IP):
+
+(?mi)^(X-Forwarded-For|X-Real-IP):\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(?:,\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)*$
+
+
+
+
+Request/Response timing or status log common pattern:
+
+(?mi)^(?:\[?\d{4}-\d{2}-\d{2}|\[?\d{2}:\d{2}:\d{2}).*(HTTP\/[0-9.]+|\b(?:GET|POST|PUT|DELETE)\b).*(\b[1-5][0-9]{2}\b).*$ 
+
+
 
 
 ```
