@@ -4802,6 +4802,9 @@ SK[0-9a-fA-F]{32}
 
 (?<=\?|\&)[a-zA-Z0-9_]+(?=\=)
 
+
+
+
 URLs, DB URIs, infra
 
 https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)
@@ -4870,6 +4873,10 @@ s\.[a-zA-Z0-9]{8,}
 
 https:\/\/vault\.[a-z0-9\-_\.]+\.com
 
+
+
+
+
 CI/CD / DevOps
 
 circle-token=[a-z0-9]{40}
@@ -4914,6 +4921,10 @@ snyk_token\s*=\s*[a-f0-9\-]{36}
 
 access_token['"]?\s*:\s*['"][a-z0-9]{32}['"]
 
+
+
+
+
 Juegos / Plataformas / Bots
 
 (?i)twitch(.{0,20})?key['"\s:=]+[a-zA-Z0-9]{20,}
@@ -4930,6 +4941,9 @@ sl\.[A-Za-z0-9_-]{20,100}
 
 shpat_[0-9a-fA-F]{32}
 
+
+
+
 URLs/Endpoints internos y fuga
 
 \b(10\.\d{1,3}|\b192\.168|\b172\.(1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}
@@ -4941,6 +4955,10 @@ localhost:[0-9]{2,5}
 https?:\/\/[a-z0-9.-]+\.internal\.[a-z]{2,}
 
 https:\/\/preprod\.[a-z0-9-]+\.[a-z]{2,}
+
+
+
+
 
 Privadas / PEM / PGP / blocks
 
@@ -4964,6 +4982,10 @@ Privadas / PEM / PGP / blocks
 
 localStorage\.setItem\(['"]token['"],\s*['"]eyJ[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+\.[a-zA-Z0-9-_]+['"]\)
 
+
+
+
+
 Generales útiles / alta entropía
 
 ['\"][A-Za-z0-9+\/]{40,}={0,2}['\"]
@@ -4972,6 +4994,10 @@ Generales útiles / alta entropía
 
 (?i)authorization:\s*Bearer\s+[a-zA-Z0-9\-._~+/]+=*
 
+
+
+
+
 Añadidas: GitHub variantes y env vars explícitas
 
 aws_session_token['"\s:=]+[A-Za-z0-9\/+=]{16,}
@@ -4979,6 +5005,10 @@ aws_session_token['"\s:=]+[A-Za-z0-9\/+=]{16,}
 (?i)AWS_ACCESS_KEY_ID['"\s:=]+\w+
 
 (?i)AWS_SECRET_ACCESS_KEY['"\s:=]+[A-Za-z0-9\/+]{40}
+
+
+
+
 
 Añadidas: GitHub nuevas (solicitadas)
 
@@ -4998,6 +5028,10 @@ JSON / YAML multiline (tokens/keys)
 
 (?s)"(?:authorization|Authorization|access_token)"\s*:\s*"[A-Za-z0-9\-\._~\+\/=]{8,}"
 
+
+
+
+
 Encodings raros / Base32 / Base64 / alta entropía
 
 (?:[A-Z2-7]{8})*(?:[A-Z2-7]{2}={6}|[A-Z2-7]{4}={4}|[A-Z2-7]{5}={3}|[A-Z2-7]{7}=)?
@@ -5005,6 +5039,10 @@ Encodings raros / Base32 / Base64 / alta entropía
 (eyJ|YTo|Tzo|PD[89]|aHR0cHM6L|aHR0cDo|rO0)[a-zA-Z0-9+/]+={0,2}
 
 ['\"][A-Za-z0-9+\/]{40,}={0,2}['\"]
+
+
+
+
 
 Headers / Patterns / Logs
 
@@ -5018,8 +5056,169 @@ Headers / Patterns / Logs
 
 
 ```
+<br><br>
 
 2- Script con más de 70 categorías diferentes para buscar secretos: API keys, tokens, paths, funciones debug y mucho más.<br><br>
+
+```yaml
+
+Secrets
+
+config
+
+env
+
+Rutas ocultas
+
+routers
+
+endpoints
+
+Fetch
+
+Axios
+
+HTTP clients
+
+Tokens
+
+refresh flow
+
+auth
+
+IDOR clues
+
+parámetros 
+
+parámetros personalizados
+
+end-point
+
+end-point, personalizado
+
+Feature flags
+
+toggles
+
+experiments
+
+Redirects
+
+return URLs
+
+open redirect clues
+
+Service workers
+
+PWA
+
+offline
+
+CSRF
+
+anti-forgery
+
+Comentarios
+
+TODO
+
+DEBUG
+
+hints
+
+DOM sinks (XSS)
+
+.css.map
+
+source maps
+
+sourceMappingURL
+
+sourcemaps
+
+Mensajes de error (server)
+
+Mensajes de error (client)
+
+Variables
+
+regex
+
+nombres de constantes comunes
+
+Formularios que previenen submit (oninput)
+
+Formularios que previenen submit (onsubmit handlers)
+
+formularios ocultos
+
+Métodos HTTP
+
+tokens
+
+URLs (detectar patterns)
+
+Bundlers
+
+build
+
+package.json scripts
+
+devtool
+
+CI pipelines
+
+deploy commands
+
+CDNs
+
+hosts
+
+llamadas HTTP
+
+URL leaks
+
+internal endpoints
+
+Credentials & Passwords
+
+OAuth & JWT
+
+Database URLs
+
+Service keys
+
+DevOps secrets (agrupado)
+
+(deploy commands
+
+CD/CI task names
+
+Encodings raros en keys (base64 + prefix).
+
+Miscellaneous
+
+headers
+
+patterns
+
+patterns de logs
+
+SAML/SOAP
+
+Custom (personalizable por framework)
+
+Prototype pollution / parametros
+
+Inteccion plantilla
+
+Cors
+
+analis de cada archivos para ver funciones ocultas
+
+```
+
+<br><br>
 
 3- Configuración de categorías para buscar en jsluice.<br><br>
 
