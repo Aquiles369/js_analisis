@@ -4710,6 +4710,7 @@ https://sploitus.com/?query=React#exploits
 ```yaml
 
 
+
 API keys / Tokens / Servicios
 
 (?:\s|=|:|"|^)AKC[a-zA-Z0-9]{10,}
@@ -4804,6 +4805,18 @@ SK[0-9a-fA-F]{32}
 
 (?<=\?|\&)[a-zA-Z0-9_]+(?=\=)
 
+\b(?:sessionid|sess|session_token|session_key|sessid|sid)\b
+
+\b(?:session|sess)_[A-Za-z0-9\-_.]{8,64}\b
+
+\b[Ss]ession[A-Za-z0-9_\-]{8,64}\b
+
+\b[A-Za-z0-9-_]{10,}\.[A-Za-z0-9-_]{10,}\.[A-Za-z0-9-_]{10,}\b
+
+\brefresh_token\b|\brefresh-token\b|\brefreshToken\b
+
+\bsession_token=[A-Za-z0-9\-_.%]{8,}\b
+
 
 
 
@@ -4881,6 +4894,15 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6
 s\.[a-zA-Z0-9]{8,}
 
 https:\/\/vault\.[a-z0-9\-_\.]+\.com
+
+(?i)\baws_secret_access_key\b|\bsecret_access_key\b
+
+(?i)AccountKey=[A-Za-z0-9+/=]{20,}
+
+(?i)DefaultEndpointsProtocol=https;AccountName=
+
+\b(?:s\.[A-Za-z0-9\-_]{20,}|vault_token)\b
+
 
 
 
@@ -5057,6 +5079,14 @@ Encodings raros / Base32 / Base64 / alta entropía
 (eyJ|YTo|Tzo|PD[89]|aHR0cHM6L|aHR0cDo|rO0)[a-zA-Z0-9+/]+={0,2}
 
 ['\"][A-Za-z0-9+\/]{40,}={0,2}['\"]
+\b[A-Za-z0-9+/]{40,}={0,2}\b
+\b[A-Za-z0-9+/]{12,}={0,2}\b
+\b0x[a-fA-F0-9]{32,}\b
+\b[a-fA-F0-9]{32,}\b
+data:[^;]+;base64,[A-Za-z0-9+/=]+
+\b[a-zA-Z]{20,}\b
+[\u200B-\u200D\uFEFF]{3,}
+
 
 
 
@@ -5148,6 +5178,9 @@ IP forwarded / client IP (X-Forwarded-For / X-Real-IP):
 Request/Response timing or status log common pattern:
 
 (?mi)^(?:\[?\d{4}-\d{2}-\d{2}|\[?\d{2}:\d{2}:\d{2}).*(HTTP\/[0-9.]+|\b(?:GET|POST|PUT|DELETE)\b).*(\b[1-5][0-9]{2}\b).*$ 
+
+
+
 
 
 
