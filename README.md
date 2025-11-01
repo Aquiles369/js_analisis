@@ -4704,7 +4704,7 @@ https://sploitus.com/?query=React#exploits
 
 ## Las tools que armé son 4:
 
-1- Script de más de 150 reglas regex diferentes.<br><br>
+1- Script de más de 150 reglas regex diferentes y con su categoría correspondiente.<br><br>
 
 
 ```yaml
@@ -5155,163 +5155,78 @@ Request/Response timing or status log common pattern:
 ```
 <br><br>
 
-2- Script con más de 70 categorías diferentes para buscar secretos: API keys, tokens, paths, funciones debug y mucho más.<br><br>
+2- Script con más de 65 categorías diferentes para buscar secretos: API keys, tokens, paths, funciones debug y mucho más.<br><br>
 
 ```yaml
 
 Secrets
-
 config
-
 env
-
 Rutas ocultas
-
 routers
-
 endpoints
-
 Fetch
-
 Axios
-
 HTTP clients
-
 Tokens
-
 refresh flow
-
 auth
-
 IDOR clues
-
 parámetros 
-
 parámetros personalizados
-
 end-point
-
 end-point, personalizado
-
 Feature flags
-
 toggles
-
 experiments
-
 Redirects
-
 return URLs
-
 open redirect clues
-
 Service workers
-
 PWA
-
 offline
-
 CSRF
-
 anti-forgery
-
-Comentarios
-
-TODO
-
-DEBUG
-
-hints
-
 DOM sinks (XSS)
-
 .css.map
-
 source maps
-
 sourceMappingURL
-
 sourcemaps
-
 Mensajes de error (server)
-
 Mensajes de error (client)
-
-Variables
-
-regex
-
-nombres de constantes comunes
-
 Formularios que previenen submit (oninput)
-
 Formularios que previenen submit (onsubmit handlers)
-
 formularios ocultos
-
 Métodos HTTP
-
 tokens
-
 URLs (detectar patterns)
-
 Bundlers
-
 build
-
 package.json scripts
-
 devtool
-
 CI pipelines
-
 deploy commands
-
 CDNs
-
 hosts
-
 llamadas HTTP
-
 URL leaks
-
 internal endpoints
-
 Credentials & Passwords
-
 OAuth & JWT
-
 Database URLs
-
 Service keys
-
 DevOps secrets (agrupado)
-
 (deploy commands
-
 CD/CI task names
-
 Encodings raros en keys (base64 + prefix).
-
 Miscellaneous
-
-headers
-
-patterns
-
-patterns de logs
-
 SAML/SOAP
-
 Custom (personalizable por framework)
-
 Prototype pollution / parametros
-
 Inteccion plantilla
-
 Cors
-
 analis de cada archivos para ver funciones ocultas
+
 
 ```
 
