@@ -5031,6 +5031,115 @@ CORS Headers (cors_headers.regex)
 
 
 
+
+Detecta parámetros sensibles, numéricos o personalizados (GET/POST/query/JS).
+
+(?i)(id|user|account|profile|order|invoice|uid|pid|cid|gid|sid|tid|eid)=[0-9]{1,10}
+
+(?i)(token|key|secret|auth|session|access|csrf|hash|signature|sig)=[A-Za-z0-9\-_]{8,}
+
+(?i)(redirect|next|url|dest|path|callback|return)=[^&\s'"]+
+
+(?i)(file|doc|img|pdf|avatar|photo|upload)=[^&\s'"]+
+
+(?i)(lang|locale|country|currency)=[A-Za-z\-_]{2,10}
+
+(?i)(debug|test|dev|admin|mode|sandbox)=[01truefalse]+
+
+
+
+
+
+
+
+
+
+Detección de endpoints REST, GraphQL o API declarados en código o configs.
+
+(?i)\b(api|rest|graphql|rpc|soap|internal|private)[/_-]?[a-z0-9\-_]+
+
+(?i)\/v[0-9]+(\/[a-z0-9\-_]+){1,4}
+
+(?i)(GET|POST|PUT|DELETE|PATCH|OPTIONS)\s+\/[A-Za-z0-9\/\-_\.]+
+
+(?i)(endpoint|url|route|path)\s*[:=]\s*["']\/?[A-Za-z0-9\/\-_\.]+["']
+
+(?i)\/api\/(user|admin|auth|config|debug|internal|private)
+
+(?i)(fetch|axios|request)\(['"]\/[A-Za-z0-9\/\-_\.]+['"]\)
+
+
+
+
+
+
+
+Tokens o claves anti-CSRF/anti-forgery en HTML, JS o configs.
+
+(?i)(anti[-_]?forgery|xsrf|csrf)[-_]?(token|key|value)?['"\s:=>]+[A-Za-z0-9\-_]{8,}
+
+(?i)<input[^>]+name=["'](csrf|xsrf|anti[-_]?forgery)[^>]*value=["'][A-Za-z0-9\-_]{8,}["']
+
+(?i)\b__RequestVerificationToken\b
+
+(?i)meta\s+name=["']csrf-token["']\s+content=["'][A-Za-z0-9\-_]{8,}["']
+
+(?i)localStorage\.setItem\(['"]csrf['"],\s*['"][A-Za-z0-9\-_]{8,}['"]\)
+
+(?i)(verify|validate)[-_]?(csrf|xsrf)['"\s]*[:=]\s*true
+
+
+
+
+
+
+
+
+
+Patrones que revelan codificaciones o escaping anómalas en claves o tokens.
+
+(?i)(key|token|secret)['"\s:=]+(%[0-9A-Fa-f]{2}){3,}
+
+(?i)(key|token|secret)['"\s:=]+(\\x[0-9A-Fa-f]{2}){3,}
+
+(?i)(key|token|secret)['"\s:=]+(\\u[0-9A-Fa-f]{4}){2,}
+
+(?i)(key|token|secret)['"\s:=]+(&#x?[0-9A-Fa-f]{2,4};){2,}
+
+(?i)(base64|hex|xor|rot13|unicode)['"\s:=]+[A-Za-z0-9+/=%]{8,}
+
+(?i)(key|token|secret)['"\s:=]+\$?\{?decodeURI(Component)?\(
+
+
+
+
+
+
+
+
+Indicadores de Prototype Pollution o propiedades peligrosas manipuladas.
+
+(?i)(__proto__|constructor|prototype)\s*[:=]\s*[{[]?
+
+(?i)(Object\.assign|Object\.defineProperty|Object\.setPrototypeOf)\(
+
+(?i)\bdeepmerge\(|extend\(|merge\(|defaultsDeep\(
+
+(?i)\b(_.|lodash)\.(merge|set|defaults|assign)\(
+
+(?i)\bfor\s*\(\s*var\s*\w+\s+in\s+\w+\)
+
+(?i)\bObject\[['"]constructor['"]\]\[['"]prototype['"]\]
+
+
+
+
+
+
+
+
+
+
 Template Injection (template_injection.regex)
 
 {{.*?}}                               # Handlebars / Mustache
