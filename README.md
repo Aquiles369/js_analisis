@@ -4702,9 +4702,68 @@ https://sploitus.com/?query=React#exploits
 <br><br>
 
 
-## Las tools que armé son 4:
+## Las tools que armé son 4:<br><br>
 
-1- Script de más de 150 reglas regex diferentes y con su categoría correspondiente.<br><br>
+
+1- Categorías detectadas.<br>
+
+API keys / Tokens / Servicios<br><br>
+
+URLs, DB URIs, infra<br><br>
+
+Servicios, SDKs y otros tokens<br><br>
+
+CI/CD / DevOps<br><br>
+
+SDKs / Telemetría / Analítica<br><br>
+
+SAML / SOAP<br><br>
+
+CORS Headers<br><br>
+
+Parámetros sensibles (parametros.txt)<br><br>
+
+Endpoints REST / GraphQL / API (endpoint.txt)<br><br>
+
+Anti-forgery / CSRF tokens<br><br>
+
+Encodings raros en keys<br><br>
+
+Prototype Pollution<br><br>
+
+Template Injection<br><br>
+
+Juegos / Plataformas / Bots<br><br>
+
+URLs / Endpoints internos y fuga<br><br>
+
+Privadas / PEM / PGP / blocks<br><br>
+
+Generales útiles / alta entropía<br><br>
+
+GitHub variantes y env vars explícitas<br><br>
+
+GitHub nuevas<br><br>
+
+JSON / YAML multiline<br><br>
+
+Encodings raros / Base32 / Base64<br><br>
+
+Firebase / Mobile / React Native configs<br><br>
+
+Service Workers / PWA / Front-end hidden configs<br><br>
+
+Encoding-ofuscation chaining patterns<br><br>
+
+Mobile tokens / Apple / Expo / Firebase / AWS mobile SDKs<br><br>
+
+Headers / Patterns / Logs<br><br>
+
+HTTP Methods<br><br>
+
+Total de categorías: 27.<br><br>
+
+302 expresiones regex únicas.<br><br>
 
 
 ```yaml
