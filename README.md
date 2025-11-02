@@ -5144,8 +5144,6 @@ Template Injection (template_injection.regex)
 
 {{.*?}}                               # Handlebars / Mustache
 
-<%[=\-]?\s*.*?\s*%>                   # EJS / ERB
-
 {%-?\s*.*?\s*-?%}                     # Jinja / Twig
 
 \${{.*?}}                             # Angular interpolations
