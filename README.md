@@ -4981,6 +4981,84 @@ access_token['"]?\s*:\s*['"][a-z0-9]{32}['"]
 
 
 
+SAML / SOAP (saml_soap.regex)
+
+(?i)\bSAML(Response|Request|Assertion|LogoutRequest|Artifact|ResponseType)\b
+
+(?i)<saml(:|2:)?(Assertion|Response|Request|Subject|AttributeStatement)\b
+
+(?i)xmlns:saml[0-9]?\s*=\s*["']urn:oasis:names:tc:SAML["']
+
+(?i)<(soap:Envelope|Envelope xmlns:soap|soapenv:Envelope)\b
+
+(?i)<soap(:|env:)?(Body|Fault|Header|Envelope)\b
+
+(?i)Content-Type:\s*application/soap\+xml
+
+(?i)<(wsse:Security|wsu:Timestamp|wsa:Action|wsa:To)\b
+
+(?i)urn:oasis:names:tc:SAML:2\.0:(assertion|protocol)
+
+(?i)<(samlp:AuthnRequest|samlp:Response|saml:Attribute)\b
+
+
+
+
+
+
+
+
+CORS Headers (cors_headers.regex)
+
+(?i)^Access-Control-(Allow|Expose|Request)-[A-Za-z-]+:
+
+(?i)(Access-Control-Allow-Origin|Access-Control-Allow-Methods|Access-Control-Allow-Headers)\s*[:=]\s*[*a-zA-Z0-9,\/\s\-_\.]+
+
+(?i)Origin:\s*https?:\/\/[A-Za-z0-9\.\-]+
+
+(?i)Referer:\s*https?:\/\/[A-Za-z0-9\.\-]+
+
+(?i)Host:\s*[A-Za-z0-9\.\-]+
+
+(?i)Authorization:\s*(Bearer|Basic|Digest|Negotiate)\s+[A-Za-z0-9\-._~+/]+=*
+
+(?i)\b(cors|cross[-_]origin|allow[-_]origin|expose[-_]headers)\b
+
+
+
+
+
+
+
+
+Template Injection (template_injection.regex)
+
+{{.*?}}                               # Handlebars / Mustache
+
+<%[=\-]?\s*.*?\s*%>                   # EJS / ERB
+
+{%-?\s*.*?\s*-?%}                     # Jinja / Twig
+
+\${{.*?}}                             # Angular interpolations
+
+{{\s*['"]?.*?['"]?\s*}}               # Escaped variants
+
+{%[-\s]?.*?[-\s]?%}                   # Django / Liquid
+
+<\?php\s*echo\s*\$.*?\?>              # PHP template echoes
+
+(?i)\b(eval|with|safe|raw|escape|striptags|urlencode)\s*\(.*?\)  # risky template filters
+
+(?i)(template|render|compile|interpolate)\s*\(['"].*?['"]\)
+
+
+
+
+
+
+
+
+
 Juegos / Plataformas / Bots
 
 (?i)twitch(.{0,20})?key['"\s:=]+[a-zA-Z0-9]{20,}
