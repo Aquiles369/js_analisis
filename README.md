@@ -4817,6 +4817,27 @@ SK[0-9a-fA-F]{32}
 
 \bsession_token=[A-Za-z0-9\-_.%]{8,}\b
 
+(?i)(password|passwd|pwd|pass|secret|cred|credential)['"\s:=]+[^\s'"]{4,}
+
+(?i)(db|database|mysql|postgres|mongo|redis|ftp|mail|smtp|ldap|ssh|api)[_\-]?(user(name)?|login|uid)['"\s:=]+[^\s'"]{3,}
+
+(?i)(db|database|mysql|postgres|mongo|redis|ftp|mail|smtp|ldap|ssh|api)[_\-]?(pass(word)?|pwd|secret)['"\s:=]+[^\s'"]{4,}
+
+(?i)(db|database|mysql|postgres|mongo|redis|ftp|mail|smtp|ldap|ssh|api)[_\-]?(key|token)['"\s:=]+[A-Za-z0-9\-_]{8,}
+
+(?i)(DB_|DATABASE_|MYSQL_|POSTGRES_|MONGO_|REDIS_|FTP_|MAIL_|SMTP_|LDAP_|SSH_|API_)?(PASSWORD|PASS|PWD|SECRET|KEY|TOKEN)=.+$
+
+(?i)(user(name)?|login|account|email)['"\s:=]+[^\s'"]{3,}
+
+\b[a-f0-9]{32,64}\b
+
+(?i)[0-9a-f]{16,64}(:[0-9a-f]{16,64})?
+
+(?i)[0-9a-f]{40}\b
+
+(?i)(NTLM|MD5|SHA1|SHA256|SHA512)\b[:= ]?[0-9a-f]{16,128}
+
+
 
 
 
@@ -5104,6 +5125,35 @@ Headers / Patterns / Logs
 
 (?i)\b(?:TODO|FIXME|DEBUG|HINT|NOTE):?.*$
 
+(?mi)^Authorization:\s*(Bearer|Basic|Digest|Negotiate)\s+[A-Za-z0-9\-._~+/]+=*$
+
+(?mi)^User-Agent:\s*.+$
+
+(?mi)^Set-Cookie:\s*[A-Za-z0-9_\-]+=.+$
+
+(?mi)^Cookie:\s*[A-Za-z0-9_\-]+=.+$
+
+(?mi)^Host:\s*[A-Za-z0-9\.\-]+$
+
+(?mi)^Origin:\s*https?:\/\/[A-Za-z0-9\.\-]+
+
+(?mi)^Referer:\s*https?:\/\/[A-Za-z0-9\.\-]+
+
+(?mi)^X-Forwarded-For:\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+(?:,\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)*$
+
+(?mi)^X-Real-IP:\s*[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+$
+
+(?mi)^(Content-Type|Accept|Cache-Control|Connection|Content-Length|Transfer-Encoding|Upgrade-Insecure-Requests):\s*.+$
+
+(?mi)^(ERROR|WARN|INFO|DEBUG|TRACE):\s+.*$
+
+(?mi)^(GET|POST|PUT|DELETE|PATCH|OPTIONS|HEAD|TRACE|CONNECT)\s+\/\S*\s+HTTP\/[0-9.]+
+
+(?mi)^HTTP\/[0-9.]+\s+[1-5][0-9]{2}\b
+
+(?mi)^\s*(?:\[?\d{4}-\d{2}-\d{2}|\[?\d{2}:\d{2}:\d{2}).*(HTTP\/[0-9.]+|\b(?:GET|POST|PUT|DELETE)\b).*(\b[1-5][0-9]{2}\b).*$ 
+
+
 
 
 
@@ -5200,8 +5250,6 @@ routers
 endpoints
 Fetch
 Axios
-HTTP clients
-Tokens
 refresh flow
 auth
 IDOR clues
@@ -5230,8 +5278,6 @@ Mensajes de error (client)
 Formularios que previenen submit (oninput)
 Formularios que previenen submit (onsubmit handlers)
 formularios ocultos
-Métodos HTTP
-tokens
 URLs (detectar patterns)
 Bundlers
 build
@@ -5244,10 +5290,6 @@ hosts
 llamadas HTTP
 URL leaks
 internal endpoints
-Credentials & Passwords
-OAuth & JWT
-Database URLs
-Service keys
 DevOps secrets (agrupado)
 (deploy commands
 CD/CI task names
