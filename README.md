@@ -4705,7 +4705,7 @@ https://sploitus.com/?query=React#exploits
 ## Las tools que armé son 4:<br><br>
 
 
-1- Categorías detectadas.<br>
+- Categorías detectadas.<br>
 
 API keys / Tokens / Servicios<br><br>
 
@@ -4761,9 +4761,9 @@ Headers / Patterns / Logs<br><br>
 
 HTTP Methods<br><br>
 
-Total de categorías: 27.<br><br>
+- Total de categorías: 27.<br><br>
 
-302 expresiones regex únicas.<br><br>
+- 302 expresiones regex únicas.<br><br>
 
 
 ```yaml
@@ -5581,69 +5581,60 @@ Request/Response timing or status log common pattern:
 ```
 <br><br>
 
-2- Script con más de 65 categorías diferentes para buscar secretos: API keys, tokens, paths, funciones debug y mucho más.<br><br>
+2- Script con más de 49 categorías totales diferentes para buscar secretos: API keys, tokens, paths, funciones debug y mucho más.<br><br>
 
 ```yaml
 
-Secrets
+secrets
 config
 env
-Rutas ocultas
+rutas_ocultas
 routers
 endpoints
-Fetch
-Axios
-refresh flow
+fetch
+axios
+tokens
+refresh_flow
 auth
-IDOR clues
-parámetros 
-parámetros personalizados
-end-point
-end-point, personalizado
-Feature flags
+parametros_personalizados
+endpoint_personalizado
+feature_flags
 toggles
 experiments
-Redirects
-return URLs
-open redirect clues
-Service workers
-PWA
+redirects
+service_workers
+pwa
 offline
-CSRF
-anti-forgery
-DOM sinks (XSS)
-.css.map
-source maps
-sourceMappingURL
+dom_sinks_xss
+source_maps
+source_mapping_url
 sourcemaps
-Mensajes de error (server)
-Mensajes de error (client)
-Formularios que previenen submit (oninput)
-Formularios que previenen submit (onsubmit handlers)
-formularios ocultos
-URLs (detectar patterns)
-Bundlers
+mensajes_error_server
+mensajes_error_client
+formularios_oninput
+formularios_onsubmit
+formularios_ocultos
+urls_patterns
+bundlers
 build
-package.json scripts
+package_scripts
 devtool
-CI pipelines
-deploy commands
-CDNs
+ci_pipelines
+deploy_commands
+cdns
 hosts
-llamadas HTTP
-URL leaks
-internal endpoints
-DevOps secrets (agrupado)
-(deploy commands
-CD/CI task names
-Encodings raros en keys (base64 + prefix).
-Miscellaneous
-SAML/SOAP
-Custom (personalizable por framework)
-Prototype pollution / parametros
-Inteccion plantilla
-Cors
-analis de cada archivos para ver funciones ocultas
+url_leaks
+internal_endpoints
+credentials_passwords
+oauth_jwt
+database_urls
+service_keys
+devops_secrets
+miscellaneous
+custom_framework
+inyeccion_plantilla
+cors
+analisis_funciones_ocultas
 
 
 ```
