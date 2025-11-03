@@ -4761,9 +4761,9 @@ Headers / Patterns / Logs<br><br>
 
 HTTP Methods<br><br>
 
-- Total de categorías: 27.<br><br>
+- Total de categorías: 24.<br><br>
 
-- 302 expresiones regex únicas.<br><br>
+- 300 expresiones regex únicas.<br><br>
 
 
 ```yaml
