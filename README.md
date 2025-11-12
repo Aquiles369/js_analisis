@@ -69,7 +69,8 @@ En bug bounty, leer el `.js` es como mirar detrás del telón: ahí están los s
 - [182 Informes diferentes](#6)
 - [Hardening / mitigation](#7)
 - [“Recursos img entre otros”](#8)
-- [“Metodología Aquiles”](#9)   
+- [“Las tools que armé son 3”](#9)   
+- [“Metodología Aquiles”](#10)   
 
  
 
@@ -4702,7 +4703,14 @@ https://sploitus.com/?query=React#exploits
 <br><br>
 
 
-## Las tools que armé son 4:<br><br>
+## Las tools que armé son 3:<br><br>
+
+#  9
+
+**En esta sección encontrarás las herramientas que desarrollé:
+La primera tool contiene más de 300 reglas Regex integradas con ripgrep.
+La segunda tool agrupa 49 categorías diferentes, cada una con alrededor de 400 palabras clave específicas, además de 10 categorías adicionales dedicadas a las permutaciones de nomenclaturas usadas para nombrar endpoints (un total de 7 esquemas de nomenclatura).
+La tercera tool utiliza IA, a la cual se le proporcionan los tres PDF correspondientes a este repositorio —dividido en tres secciones— para que aprenda y asimile el concepto general del proyecto, funcionando como guía de referencia durante el análisis de código JavaScript.**
 
 
 - Categorías detectadas.<br>
@@ -6043,7 +6051,7 @@ consulta jsluice -q "(function_declaration name: (identifier) @fn body: (stateme
 
 ### <picture> <img src = "https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzhwcjVwbmRsazd6cTh3M3l2cmh1eTIxYmh3YmF6Yzk3c2ZuZzBvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/uRoZBofy2cTCvz18we/giphy.gif" width = 80px>  </picture> “Metodología Aquiles”
 
-#  9
+#  10
 
 **En esta sección encontrarás mi metodología exacta y todo el proceso: desde la recolección de subdominios y la validación de que están vivos, hasta los comandos de cada herramienta utilizados en cada fase. También detallo cuándo y cómo empleo mis scripts personalizados, el flujo de recolección de archivos (.js, entre otros), y el proceso de análisis manual posterior , link referencia https://www.youtube.com/watch?v=VpDmOjDqmh8**
 <br><br>
