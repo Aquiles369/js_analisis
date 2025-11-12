@@ -1109,7 +1109,7 @@ Utilizar mi herramienta Gestor de Informes para subir informes masivamente y cre
 
 ## Importar JSON de herramientas con mis notas:
 
-• <a href="https://github.com/Aquiles369/js_analisis/blob/main/assets/json_informes/js%20(4).json" target="_blank" rel="noopener">JSON con notas personales de cada uno de los 182 informes de análisis de JavaScript</a>
+• <a href="https://github.com/Aquiles369/js_analisis/blob/main/assets/json_informes/js_177.json" target="_blank" rel="noopener">JSON con notas personales de cada uno de los 182 informes de análisis de JavaScript</a>
 
 
 <br><br>
