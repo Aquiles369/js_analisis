@@ -4674,6 +4674,9 @@ https://www.youtube.com/watch?v=qWDwHRZfbDo
 https://www.youtube.com/watch?v=uzRbPp4rC4M
  — Decodificación de VLQ para source.map, súper recomendado; incluye herramienta web.<br><br>
  https://www.youtube.com/watch?v=oVcv3QZiXNM Super recomendado sobre Análisis en profundidad de los mapas de origen - Nicolò Ribaudo | JSHeroes 2024
+  — JSParser interesante.<br><br>
+ https://www.youtube.com/watch?v=vUrx113ZtEw esta bueno html.
+ 
 
 
 <br><br>
