@@ -4676,6 +4676,14 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
  https://www.youtube.com/watch?v=oVcv3QZiXNM Super recomendado sobre Análisis en profundidad de los mapas de origen - Nicolò Ribaudo | JSHeroes 2024
   <br><br>
  https://www.youtube.com/watch?v=vUrx113ZtEw — Tool JSParser interesante , esta bueno html.
+ <br><br>
+ https://www.youtube.com/watch?v=JQspeMI1UX4 — MHE  es tipo quiere crear en go el motor de reglas regex etc sin entender y saber que ya existe algo asi y super pulido en C y Rust que soporta todas las extensiones llamado ripgrep y con pcre2 -_- pero bueno se agredece compartir.
+  https://www.youtube.com/watch?v=LXS8k06v61c — Tool  interesante , esta bueno extension del navegador.
+ <br><br>
+ https://www.youtube.com/watch?v=pPgRMP-bRro — Tool LinkFinder interesante , esta bueno html mismo de jsparser.
+ <br><br>
+ https://www.youtube.com/watch?v=yT_IqBMwLFg — Tool extension de burp suite interesante , esta bueno algo basico.
+ 
  
 
 
