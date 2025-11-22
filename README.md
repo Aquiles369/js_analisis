@@ -578,7 +578,7 @@ Revisión de dependencias vulnerables
 
 •  Prueba clave:
 
-Buscá versiones de librerías crea lsita de las biblotecas librerias mas utizlai como tambine framow erc front etc:
+Buscá versiones de librerías crea lista de las biblotecas librerias mas utilizadas , front-end etc:
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@1.8.3"></script>
 
