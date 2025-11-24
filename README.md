@@ -4677,8 +4677,9 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
   <br><br>
  https://www.youtube.com/watch?v=FqnSAa2KmBI — Metodología del cazador de bugs: análisis de aplicaciones | Jason Haddix minuto 35:13 js interesante
  <br><br>
- https://www.youtube.com/watch?v=FTeE3OrTNoA&t=8s — Hacker101 - JavaScript for Hackers (Created by ‪@STOKfredrik‬) no esta mal  me encanto la manera de como lo expresa.
- 
+ https://www.youtube.com/watch?v=FTeE3OrTNoA&t=8s — Hacker101 - JavaScript for Hackers (Created by ‪@STOKfredrik‬) no esta mal  me encanto la manera de como lo expresa y aprendi algunas revisiones manules mediante la consola como ver todos las llamdas de evento que tiene ese sub-domain como tambien las llamadas de api ajax que hace hacia afuera en xhr etc y otra cosa mas para el rastreo de variables pueden cambiar el nombre funciones concatenacion de cadenas y contruccion en tiempo real aparte estudia y busque recursos sobre devtool sobre su uso completo tips avanzado comando general que no sabia que tenia la devtool muy bueno y puntos de quiebre entres otros , entender cuando un archivo esta minificado cuando esta ofuscado y encontre tools para deteccin de tanto minificados como ofuscados y que tool tengo que usar para aplicar embellecer y desofuscar por la terminal y tambien como existen tool para los sourcemap y su contruccion analisis etc.
+ <br><br>
+ https://www.youtube.com/watch?v=nkznsNxDM5k — ¡Buscando Javascript! Bug Bounty, scripthunter, jsmon, getjswords y más , muy bueno tools interesante para ffuf con los archivos js y monitoreo avanzado de js interesante.
  
 
 
