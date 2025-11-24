@@ -4684,6 +4684,8 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
  https://github.com/NobleSiXSS/getjswords.py_fork — Tool de python para extraccion de palabras claves de los archivos js etc para armar un diccionario especializado para fuerza bruta se podria mejorar bastante la tool ejemplo agregar mas palabras claves y mejorar la deteccion como la regla regex entres otros pasarle a GPT si queres mejorar en mi caso estoy armando algo de mi gusto.
  <br><br>
  https://github.com/al-sultani/url-tracker — ¡ Tool interesante no la probe aun segun el repo esta bastante bien echa y pulida ux etc interesante y mas pulida vs https://github.com/robre/jsmon en cambio en esta esta algo mas limita para mui la primera es mas completa. 
+  <br><br>
+ https://github.com/003random/getJS — ¡ Tool para descargar todos los archivos etc de las url que le pases ejemplo de js etc muy bueno.
 
  
 
