@@ -4680,6 +4680,11 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
  https://www.youtube.com/watch?v=FTeE3OrTNoA&t=8s — Hacker101 - JavaScript for Hackers (Created by ‪@STOKfredrik‬) no esta mal  me encanto la manera de como lo expresa y aprendi algunas revisiones manules mediante la consola como ver todos las llamdas de evento que tiene ese sub-domain como tambien las llamadas de api ajax que hace hacia afuera en xhr etc y otra cosa mas para el rastreo de variables pueden cambiar el nombre funciones concatenacion de cadenas y contruccion en tiempo real aparte estudia y busque recursos sobre devtool sobre su uso completo tips avanzado comando general que no sabia que tenia la devtool muy bueno y puntos de quiebre entres otros , entender cuando un archivo esta minificado cuando esta ofuscado y encontre tools para deteccin de tanto minificados como ofuscados y que tool tengo que usar para aplicar embellecer y desofuscar por la terminal y tambien como existen tool para los sourcemap y su contruccion analisis etc.
  <br><br>
  https://www.youtube.com/watch?v=nkznsNxDM5k — ¡Buscando Javascript! Bug Bounty, scripthunter, jsmon, getjswords y más , muy bueno tools interesante para ffuf con los archivos js y monitoreo avanzado de js interesante.
+ <br><br>
+ https://github.com/NobleSiXSS/getjswords.py_fork — Tool de python para extraccion de palabras claves de los archivos js etc para armar un diccionario especializado para fuerza bruta se podria mejorar bastante la tool ejemplo agregar mas palabras claves y mejorar la deteccion como la regla regex entres otros pasarle a GPT si queres mejorar en mi caso estoy armando algo de mi gusto.
+ <br><br>
+ https://github.com/al-sultani/url-tracker — ¡ Tool interesante no la probe aun segun el repo esta bastante bien echa y pulida ux etc interesante y mas pulida vs https://github.com/robre/jsmon en cambio en esta esta algo mas limita para mui la primera es mas completa. 
+
  
 
 
