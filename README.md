@@ -4687,6 +4687,13 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
   <br><br>
  https://github.com/003random/getJS — ¡ Tool para descargar todos los archivos etc de las url que le pases ejemplo de js etc muy bueno.
 
+ <br><br>
+ https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html — ¡ Interesante hardering de secretos manejo , rotacion , muy bueno.
+ <br><br>
+ https://owasp.org/www-project-wrongsecrets/ — ¡ Ctf interesante mas de 50 ejercicios.
+ <br><br>
+ https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#introduction — ¡ algo basico pero aun sirve algunas memdidas de proteccion ejemplo iframe de sandbox otras protecciones menores pero imporante.
+ 
  
 
 
