@@ -4693,7 +4693,17 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
  https://owasp.org/www-project-wrongsecrets/ — ¡ Ctf interesante mas de 50 ejercicios.
  <br><br>
  https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#introduction — ¡ algo basico pero aun sirve algunas memdidas de proteccion ejemplo iframe de sandbox otras protecciones menores pero imporante.
- 
+ <br><br>
+ Books📓:
+1. The Joy of JavaScript— By Luis Atencio , click to Download the The Joy of JavaScript
+ <br><br>
+2.Eloquent Javascript: A Modern Introduction to Programming -By Marijn Haverbeke , Click to Download Eloquent Javascript: A Modern Introduction to Programming.
+ <br><br>
+3.JavaScript For Impatient Programmers — By Dr. Axel Rauschmayer , Click to Download JavaScript For Impatient Programmers.
+ <br><br>
+4.Simplifying JavaScript: Writing Modern JavaScript with ES5, ES6, and Beyond — By Joe Morgan , Click to Download Simplifying JavaScript: Writing Modern JavaScript with ES5, ES6, and Beyond.
+ <br><br>
+Podes descargarlo cada uno mediante este sitio web , https://welib.org/md5/daaecc43eef120737ebaea63ffe494e9 y otra tips de libro un invetigador que trabaja para la empresa Portswwiger.net tiene un libro de js bastante bueno para comenzar esta bien y tambien mira mis informes leidos con sus notas de informes de bug  bounty sobre javascrypt.
  
 
 
