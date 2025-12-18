@@ -4683,7 +4683,7 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
  <br><br>
  https://github.com/NobleSiXSS/getjswords.py_fork — Tool de python para extraccion de palabras claves de los archivos js etc para armar un diccionario especializado para fuerza bruta se podria mejorar bastante la tool ejemplo agregar mas palabras claves y mejorar la deteccion como la regla regex entres otros pasarle a GPT si queres mejorar en mi caso estoy armando algo de mi gusto.
  <br><br>
- https://github.com/al-sultani/url-tracker — ¡ Tool interesante no la probe aun segun el repo esta bastante bien echa y pulida ux etc interesante y mas pulida vs https://github.com/robre/jsmon en cambio en esta esta algo mas limita para mui la primera es mas completa. 
+ https://github.com/al-sultani/url-tracker — ¡ Tool interesante no la probe aun segun el repo esta bastante bien echa y pulida ux etc interesante y mas pulida vs https://github.com/robre/jsmon en cambio en esta esta algo mas limita para mi la primera es mas completa. 
   <br><br>
  https://github.com/003random/getJS — ¡ Tool para descargar todos los archivos etc de las url que le pases ejemplo de js etc muy bueno.
 
@@ -4692,7 +4692,7 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
  <br><br>
  https://owasp.org/www-project-wrongsecrets/ — ¡ Ctf interesante mas de 50 ejercicios.
  <br><br>
- https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#introduction — ¡ algo basico pero aun sirve algunas memdidas de proteccion ejemplo iframe de sandbox otras protecciones menores pero imporante.
+ https://cheatsheetseries.owasp.org/cheatsheets/Third_Party_Javascript_Management_Cheat_Sheet.html#introduction — ¡ algo basico pero aun sirve algunas medidas de proteccion ejemplo iframe de sandbox otras protecciones menores pero imporante.
  <br><br>
  Books📓:
 1. The Joy of JavaScript— By Luis Atencio , click to Download the The Joy of JavaScript
