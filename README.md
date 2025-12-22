@@ -4702,8 +4702,11 @@ https://www.youtube.com/watch?v=uzRbPp4rC4M
 3.JavaScript For Impatient Programmers — By Dr. Axel Rauschmayer , Click to Download JavaScript For Impatient Programmers.
  <br><br>
 4.Simplifying JavaScript: Writing Modern JavaScript with ES5, ES6, and Beyond — By Joe Morgan , Click to Download Simplifying JavaScript: Writing Modern JavaScript with ES5, ES6, and Beyond.
- <br><br>
+<br><br>
 Podes descargarlo cada uno mediante este sitio web , https://welib.org/md5/daaecc43eef120737ebaea63ffe494e9 y otra tips de libro un invetigador que trabaja para la empresa Portswwiger.net tiene un libro de js bastante bueno para comenzar esta bien y tambien mira mis informes leidos con sus notas de informes de bug  bounty sobre javascrypt.
+<br><br>
+https://www.youtube.com/watch?v=CiIyaZ3x49c .Muy bueno me , ayudo mucho a comprender sobre regex como funciona y el por que funciona de manera distinta entre lenjuages de programacion y tambien otra cosa que descubri por expericencia propia incluso por tipo de shell y html etc ayudo mucho saber que existia lo del regex101 que con eso pude mejorar mis regex complejas con un automata ripgrep etc y gpt etc interesante , el tipo tiene un sitio web intereasante sobre como algunos caracteres o meta caracteres a ascii etc.
+
  
 
 
